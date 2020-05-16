@@ -1,0 +1,176 @@
+<!doctype html>
+
+<head>
+  <title>CodeMirror: Code Folding 4D-Demo</title>
+  <meta charset="utf-8"/>
+  <link rel=stylesheet href="../doc/docs.css">
+
+  <style>
+    .some-css {
+      color: red;
+      line-height: 2;
+    }
+    
+    /* -- visibletabs -- */
+    .CodeMirror {border-top: 1px solid #eee; border-bottom: 1px solid #eee;}
+    .cm-tab {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
+    background-position: right;
+    background-repeat: no-repeat;
+      }
+
+
+  </style>
+
+  <link rel="stylesheet" href="../theme/4d.css">
+  <link rel="stylesheet" href="../lib/codemirror.css">
+  <link rel="stylesheet" href="../addon/fold/foldgutter.css" />
+  <script src="../lib/codemirror.js"></script>
+  <script src="../addon/fold/foldcode.js"></script>
+  <script src="../addon/fold/foldgutter.js"></script>
+  <script src="../addon/fold/brace-fold.js"></script>
+  <script src="../addon/fold/xml-fold.js"></script>
+  <script src="../addon/fold/indent-fold.js"></script>
+  <script src="../addon/fold/markdown-fold.js"></script>
+  <script src="../addon/fold/comment-fold.js"></script>
+  <script src="../addon/edit/trailingspace.js"></script>
+  <script src="../addon/edit/matchbrackets.js"></script>
+  <script src="../mode/4d/4d.js"></script>
+  <script src="../mode/javascript/javascript.js"></script>
+  <script src="../mode/xml/xml.js"></script>
+  <script src="../mode/css/css.js"></script>
+  <script src="../mode/htmlmixed/htmlmixed.js"></script>
+  <script src="../mode/python/python.js"></script>
+  <script src="../mode/markdown/markdown.js"></script>
+  <style>
+    .CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}
+  </style>
+</head>
+
+<body>
+<div id=nav>
+  <a href="https://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../doc/logo.png"></a>
+
+  <ul>
+    <li><a href="../index.html">Home</a>
+    <li><a href="../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
+  <ul>
+    <li><a class=active href="#">Code Folding</a>
+  </ul>
+</div>
+
+<article>
+  <h2>Code Folding 4D-Demo</h2>
+  <form>
+    <div style="max-width: 50em; margin-bottom: 1em">4D:<br>
+    <textarea id="code-4d" name="code-4d"></textarea></div>
+    
+    <div style="max-width: 50em; margin-bottom: 1em">JavaScript:<br>
+    <textarea id="code-js" name="code-js"></textarea></div>
+    
+    <div style="max-width: 50em; margin-bottom: 1em">HTML:<br>
+    <textarea id="code-html" name="code-html"></textarea></div>
+    
+    <div style="max-width: 50em">Python:<br>
+    <textarea id="code-python" name="code-python">
+def foo():
+  do_some_stuff()
+  here
+  return None
+
+class Bar:
+  __init__(self):
+    if True:
+      print("True")
+    else:
+      print("False")
+
+  this_code_makes_no_sense():
+    pass
+
+# A comment</textarea></div>
+
+    <div style="max-width: 50em">Markdown:<br>
+    <textarea id="code-markdown" name="code-markdown"></textarea></div>
+
+  </form>
+
+  <script id="script">
+/*
+ * Demonstration of code folding
+ */
+window.onload = function() {
+  var te_4d = document.getElementById("code-4d");
+  te_4d.value = "C_OBJECT($employees;$employee)\n\n$regExp1:=\"^[\\\\+\\\\-\\\\*\\\\/&|\\\\\\\\\\\\^<>=#%]\"  // $regExp1:=\"^[\\\\+\\\\-\\\\*\\\\/&|\\\\\\\\\\\\^<>=#%]\"\n$regExp2:=\"^((<=)|(>=)|(\\\\:=)|(\\\\^\\\\|)|(<<)|(>>)|(\\\\?\\\\+)|(\\\\?\\\\-)|(\\\\?\\\\?))\"  // $regExp2:=\"^((<=)|(>=)|(\\\\:=)|(\\\\^\\\\|)|(<<)|(>>)|(\\\\?\\\\+)|(\\\\?\\\\-)|(\\\\?\\\\?))\"\n\n$employees:=ds.Employee.query(\"lastName = :1\";\"S@\")\n$employee:=ds.Employee.new()\n$employee.lastName:=\"Smith\"\n$employee.save()\n$employees.add($employee) //The $employee entity is added to the $employees entity selection\n\n$Find:=Request(\"Type a name\")\nIf(OK=1)\n   QUERY([People];[People]LastName=$Find)\nElse\n   ALERT(\"You did not enter a name.\")\nEnd if\n\nFor($vlChar;1;Length(vtSomeText))\n   If(Character code(vtSomeText[[$vlChar]])=Tab)\n      vtSomeText[[$vlChar]]):=\"x\"\n   End if\nEnd for\n\n$fieldName1:=Field name(->[Kunden]Nummer)\n$tabName2:=Table name(->[Kunden])\nIf ($vlResAttr ?? Purgeable resource bit)  // Is the resource purgeable?\n	$test:=(<>Klammeraffe#3)\nEnd if \nIf (($vlResAttr & Purgeable resource mask)#0)  //Is the resource purgeable?\n	IDLE\n	$bool:=((Length([Kunden]E_Mail)>0) & (Position(\"@\";[Kunden]E_Mail;*)>0))\nEnd if \n$vlResAttr:=$vlResAttr ?+ Purgeable resource bit\n$vlResAttr:=$vlResAttr | Purgeable resource bit\n$vlLong:=($viIntA << 16) | $viIntB  // Store two Integers in a Long Integer\n$vlIntA:=$vlLong >> 16  // Extract back the integer stored in the high-word\n$viIntB:=$vlLong & 0xFFFF  // Extract back the Integer stored in the low-word\n$bool:=(True#False)\n$bool:=(True=False)\n$bool:=(1<2)\n$bool:=(2>1)\n$bool:=($nr1<=$nr2)\n$bool:=($nr1>=$nr2)\n$bool:=(\"abc test xyz\"%\"test\")\n$bool:=zIsStringSame(\"abc\";\"ABC\")\n$bool:=zIsPointerType(->[Kunden];4)\nBegin SQL\n	SELECT count(*)\n	from Aboauftraege\n	where Aboauftraege.Kombi_Name <> :$Leer\n	and Aboauftraege.Kombi_AboNummer = :$KombiNr\n	into :$AnzAbos\nEnd SQL\nFor each ($item;$col)\n	$test:=$test+$item\nEnd for each \nCase of \n	: (False)\n		IDLE\n	: (True)\n		IDLE\nEnd case \nWhile (Boolean_Expression)\n	statement(s)\nEnd while \nRepeat \n	statement(s)\nUntil (Boolean_Expression)\nFor ($vlElem;1;Size of array(anArray))\n	anArray{$vlElem}:=Null\nEnd for \nFor each (emp;ds.Employees.query(\"country='UK'\"))\n	emp.salary:=emp.salary*1.03\n	emp.save()\nEnd for each \nUse (Shared_obj_or_Shared_collection)\n	statement(s)\nEnd use\n$myDate:=!1997-01-20!+9\n";
+
+
+  var te_js = document.getElementById("code-js");
+  var sc = document.getElementById("script");
+  te_js.value = (sc.textContent || sc.innerText || sc.innerHTML).replace(/^\s*/, "");
+  sc.innerHTML = "";
+  var te_html = document.getElementById("code-html");
+  te_html.value = document.documentElement.innerHTML;
+  var te_python = document.getElementById("code-python");
+  var te_markdown = document.getElementById("code-markdown");
+  te_markdown.value = "# Foo\n## Bar\n\nblah blah\n\n## Baz\n\nblah blah\n\n# Quux\n\nblah blah\n"
+
+  window.editor_4d = CodeMirror.fromTextArea(te_4d, {
+    mode: "4d",
+    theme: "4d",
+    lineNumbers: true,
+    lineWrapping: false,
+    matchBrackets: true,
+    extraKeys: {"Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); }},
+    indentUnit: 2,
+    smartIndent: true,
+    indentWithTabs: true,
+    tabSize: 2,
+    showTrailingSpace: true,
+    fixedGutter: true,
+    foldGutter: {rangeFinder: new CodeMirror.fold.combine(CodeMirror.fold.indent, CodeMirror.fold.comment)},
+    gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
+  });
+
+  window.editor = CodeMirror.fromTextArea(te_js, {
+    mode: "javascript",
+    lineNumbers: true,
+    lineWrapping: true,
+    extraKeys: {"Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); }},
+    foldGutter: true,
+    gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
+  });
+  editor.foldCode(CodeMirror.Pos(13, 0));
+
+  window.editor_html = CodeMirror.fromTextArea(te_html, {
+    mode: "text/html",
+    lineNumbers: true,
+    lineWrapping: true,
+    extraKeys: {"Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); }},
+    foldGutter: true,
+    gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
+  });
+  editor_html.foldCode(CodeMirror.Pos(0, 0));
+  editor_html.foldCode(CodeMirror.Pos(34, 0));
+
+  window.editor_python = CodeMirror.fromTextArea(te_python, {
+    mode: "python",
+    lineNumbers: true,
+    extraKeys: {"Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); }},
+    foldGutter: true,
+    gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
+  });
+
+  window.editor_markdown = CodeMirror.fromTextArea(te_markdown, {
+    mode: "markdown",
+    lineNumbers: true,
+    lineWrapping: true,
+    extraKeys: {"Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); }},
+    foldGutter: true,
+    gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
+  });
+};
+  </script>
+</article>
+</body>

@@ -1,0 +1,129 @@
+<!doctype html>
+
+<title>CodeMirror: 4D mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
+
+<link rel="stylesheet" href="../../theme/4d.css">
+<script src="../../lib/codemirror.js"></script>
+<script src="../../addon/edit/matchbrackets.js"></script>
+<script src="4d.js"></script>
+<style>.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
+<div id=nav>
+  <a href="https://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+
+  <ul>
+    <li><a href="../../index.html">Home</a>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
+  <ul>
+    <li><a href="../index.html">Language modes</a>
+    <li><a class=active href="#">4D</a>
+  </ul>
+</div>
+
+<article>
+<h2>4D mode</h2>
+
+<div><textarea id="code" name="code">
+C_OBJECT($employees;$employee)
+
+$regExp1:="^[\\+\\-\\*\\/&|\\\\\\^<>=#%]"  // $regExp1:="^[\\+\\-\\*\\/&|\\\\\\^<>=#%]"
+$regExp2:="^((<=)|(>=)|(\\:=)|(\\^\\|)|(<<)|(>>)|(\\?\\+)|(\\?\\-)|(\\?\\?))"  // $regExp2:="^((<=)|(>=)|(\\:=)|(\\^\\|)|(<<)|(>>)|(\\?\\+)|(\\?\\-)|(\\?\\?))"
+
+$employees:=ds.Employee.query("lastName = :1";"S@")
+$employee:=ds.Employee.new()
+$employee.lastName:="Smith"
+$employee.save()
+$employees.add($employee) //The $employee entity is added to the $employees entity selection
+
+$Find:=Request("Type a name")
+If(OK=1)
+   QUERY([People];[People]LastName=$Find)
+Else
+   ALERT("You did not enter a name.")
+End if
+
+For($vlChar;1;Length(vtSomeText))
+   If(Character code(vtSomeText[[$vlChar]])=Tab)
+      vtSomeText[[$vlChar]]):="x"
+   End if
+End for
+
+$fieldName1:=Field name(->[Kunden]Nummer)
+$tabName2:=Table name(->[Kunden])
+If ($vlResAttr ?? Purgeable resource bit)  // Is the resource purgeable?
+	$test:=(<>Klammeraffe#3)
+End if 
+If (($vlResAttr & Purgeable resource mask)#0)  //Is the resource purgeable?
+	IDLE
+	$bool:=((Length([Kunden]E_Mail)>0) & (Position("@";[Kunden]E_Mail;*)>0))
+End if 
+$vlResAttr:=$vlResAttr ?+ Purgeable resource bit
+$vlResAttr:=$vlResAttr | Purgeable resource bit
+$vlLong:=($viIntA << 16) | $viIntB  // Store two Integers in a Long Integer
+$vlIntA:=$vlLong >> 16  // Extract back the integer stored in the high-word
+$viIntB:=$vlLong & 0xFFFF  // Extract back the Integer stored in the low-word
+$bool:=(True#False)
+$bool:=(True=False)
+$bool:=(1<2)
+$bool:=(2>1)
+$bool:=($nr1<=$nr2)
+$bool:=($nr1>=$nr2)
+$bool:=("abc test xyz"%"test")
+$bool:=zIsStringSame("abc";"ABC")
+$bool:=zIsPointerType(->[Kunden];4)
+Begin SQL
+	SELECT count(*)
+	from Aboauftraege
+	where Aboauftraege.Kombi_Name <> :$Leer
+	and Aboauftraege.Kombi_AboNummer = :$KombiNr
+	into :$AnzAbos
+End SQL
+For each ($item;$col)
+	$test:=$test+$item
+End for each 
+Case of 
+	: (False)
+		IDLE
+	: (True)
+		IDLE
+End case 
+While (Boolean_Expression)
+	statement(s)
+End while 
+Repeat 
+	statement(s)
+Until (Boolean_Expression)
+For ($vlElem;1;Size of array(anArray))
+	anArray{$vlElem}:=Null
+End for 
+For each (emp;ds.Employees.query("country='UK'"))
+	emp.salary:=emp.salary*1.03
+	emp.save()
+End for each 
+Use (Shared_obj_or_Shared_collection)
+	statement(s)
+End use
+$myDate:=!1997-01-20!+9
+</textarea></div>
+
+<script>
+  var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+    lineNumbers: true,
+    matchBrackets: true,
+    theme: "4d",
+    mode: "text/x-4d",
+    indentUnit: 2,
+    smartIndent: false,
+    indentWithTabs: false
+  });
+</script>
+
+<p>
+Syntax highlighting for the 4D language.
+</p>
+
+<p><strong>MIME types defined:</strong> <code>text/x-4d</code>.</p>
+</article>

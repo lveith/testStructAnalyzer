@@ -1,0 +1,1478 @@
+<!doctype html>
+<html>
+<head>
+<title>4D merge view demo</title>
+<meta charset="utf-8"/>
+
+<link rel=stylesheet href="../lib/codemirror.css">
+<link rel=stylesheet href="../addon/merge/merge.css">
+<script src="../lib/codemirror.js"></script>
+<script src="../addon/mode/loadmode.js"></script>
+<script src="../mode/meta.js"></script>
+<script src="../addon/merge/diff_match_patch.js"></script>
+<script src="../addon/merge/merge.js"></script>
+<script src="../addon/mode/multiplex.js"></script>
+<script src="../addon/mode/overlay.js"></script>
+<script src="../addon/mode/simple.js"></script>
+
+<link rel="stylesheet" href="../addon/lint/lint.css" />
+<link rel="stylesheet" href="../addon/hint/show-hint.css" />
+<link rel="stylesheet" href="../addon/scroll/simplescrollbars.css" />
+<link rel="stylesheet" href="../addon/dialog/dialog.css" />
+<link rel="stylesheet" href="../addon/search/matchesonscrollbar.css" />
+
+<script type="text/javascript" src="../lib/util/formatting.js"></script>
+<script type="text/javascript" src="../addon/selection/selection-pointer.js"></script>
+<script type="text/javascript" src="../addon/fold/foldcode.js"></script>
+<script type="text/javascript" src="../addon/fold/foldgutter.js"></script>
+<script type="text/javascript" src="../addon/fold/brace-fold.js"></script>
+<script type="text/javascript" src="../addon/fold/xml-fold.js"></script>
+<script type="text/javascript" src="../addon/fold/comment-fold.js"></script>
+<script type="text/javascript" src="../addon/lint/jshint.js"></script>
+<script type="text/javascript" src="../addon/lint/jsonlint.js"></script>
+<script type="text/javascript" src="../addon/lint/csslint.js"></script>
+<script type="text/javascript" src="../addon/lint/lint.js"></script>
+<script type="text/javascript" src="../addon/lint/javascript-lint.js"></script>
+<script type="text/javascript" src="../addon/lint/json-lint.js"></script>
+<script type="text/javascript" src="../addon/lint/css-lint.js"></script>
+<script type="text/javascript" src="../addon/hint/show-hint.js"></script>
+<script type="text/javascript" src="../addon/hint/javascript-hint.js"></script>
+<script type="text/javascript" src="../addon/scroll/simplescrollbars.js"></script>
+<script type="text/javascript" src="../addon/dialog/dialog.js"></script>
+<script type="text/javascript" src="../addon/search/searchcursor.js"></script>
+<script type="text/javascript" src="../addon/search/search.js"></script>
+<script type="text/javascript" src="../addon/scroll/annotatescrollbar.js"></script>
+<script type="text/javascript" src="../addon/search/matchesonscrollbar.js"></script>
+<script type="text/javascript" src="../addon/search/jump-to-line.js"></script>
+<script type="text/javascript" src="../addon/edit/matchtags.js"></script>
+<script type="text/javascript" src="../addon/edit/trailingspace.js"></script>
+<script type="text/javascript" src="../addon/selection/active-line.js"></script>
+<script type="text/javascript" src="../addon/edit/matchbrackets.js"></script>
+<script type="text/javascript" src="../addon/edit/closebrackets.js"></script>
+<script type="text/javascript" src="../addon/comment/comment.js"></script>
+<script type="text/javascript" src="../addon/wrap/hardwrap.js"></script>
+<script type="text/javascript" src="../keymap/sublime.js"></script>
+
+
+<link rel="stylesheet" href="../addon/fold/foldgutter.css" />
+<script src="../addon/fold/foldcode.js"></script>
+<script src="../addon/fold/foldgutter.js"></script>
+<script src="../addon/fold/brace-fold.js"></script>
+<script src="../addon/fold/xml-fold.js"></script>
+<script src="../addon/fold/indent-fold.js"></script>
+<script src="../addon/fold/markdown-fold.js"></script>
+<script src="../addon/fold/comment-fold.js"></script>
+
+<style>
+.CodeMirror { line-height: 1.2; }
+
+.CodeMirror-dialog-top {
+  opacity: 1 !important;
+}
+
+span.clicky {
+  cursor: pointer;
+  background: #d70;
+  color: white;
+  padding: 0 3px;
+  border-radius: 5px;
+  padding-bottom: 3px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 3px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+body, html { margin: 0; padding: 0; height: 100%; }
+section, article { display: block; padding: 0; }
+
+body {
+  background: #f8f8f8;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+p { margin-top: 0; }
+
+h2, h3, h1 {
+  font-weight: normal;
+  margin-bottom: .7em;
+}
+h1 { font-size: 140%; }
+h2 { font-size: 120%; }
+h3 { font-size: 110%; }
+article > h2:first-child, section:first-child > h2 { margin-top: 0; }
+
+#nav h1 {
+  margin-right: 12px;
+  margin-top: 0;
+  margin-bottom: 2px;
+  color: #d30707;
+  letter-spacing: .5px;
+}
+
+a, a:visited, a:link, .quasilink {
+  color: #A21313;
+}
+
+em {
+  padding-right: 2px;
+}
+
+.quasilink {
+  cursor: pointer;
+}
+
+article {
+  max-width: 100%;
+  margin: 0 0 0 0;
+  border-left: 0px solid #E30808;
+  border-right: 0px solid #ddd;
+  padding-bottom: 16px;
+  padding-left: 6px;
+  padding-right: 16px;
+  padding-top: 2px;
+  background: white;
+  z-index: 2;
+  position: relative;
+  min-height: 100%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+#nav {
+  position: fixed;
+  padding-top: 30px;
+  max-height: 100%;
+  box-sizing: -moz-border-box;
+  box-sizing: border-box;
+  overflow-y: auto;
+  left: 0; right: none;
+  width: 160px;
+  text-align: right;
+  z-index: 1;
+}
+
+@media screen and (min-width: 1000px) {
+  article {
+    margin: 0 auto;
+  }
+  #nav {
+    right: 50%;
+    width: auto;
+    border-right: 349px solid transparent;
+  }
+}
+
+#nav ul {
+  display: block;
+  margin: 0; padding: 0;
+  margin-bottom: 32px;
+}
+
+#nav a {
+  text-decoration: none;
+}
+
+#nav li {
+  display: block;
+  margin-bottom: 4px;
+}
+
+#nav li ul {
+  font-size: 80%;
+  margin-bottom: 0;
+  display: none;
+}
+
+#nav li.active ul {
+  display: block;
+}
+
+#nav li li a {
+  padding-right: 20px;
+  display: inline-block;
+}
+
+#nav ul a {
+  color: black;
+  padding: 0 7px 1px 11px;
+}
+
+#nav ul a.active, #nav ul a:hover {
+  border-bottom: 1px solid #E30808;
+  margin-bottom: -1px;
+  color: #E30808;
+}
+
+#logo {
+  border: 0;
+  margin-right: 12px;
+  margin-bottom: 25px;
+}
+
+section {
+  border-top: 1px solid #E30808;
+  margin: 1.5em 0;
+}
+
+section.first {
+  border: none;
+  margin-top: 0;
+}
+
+#demo {
+  position: relative;
+}
+
+#demolist {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  z-index: 25;
+}
+
+.yinyang {
+  position: absolute;
+  top: -10px;
+  left: 0; right: 0;
+  margin: auto;
+  display: block;
+  height: 120px;
+}
+
+.actions {
+  margin: 1em 0 0;
+  min-height: 100px;
+  position: relative;
+}
+
+.actionspicture {
+  pointer-events: none;
+  position: absolute;
+  height: 100px;
+  top: 0; left: 0; right: 0;
+}
+
+.actionlink {
+  pointer-events: auto;
+  font-family: arial;
+  font-size: 80%;
+  font-weight: bold;
+  position: absolute;
+  top: 0; bottom: 0;
+  line-height: 1;
+  height: 1em;
+  margin: auto;
+}
+
+.actionlink.download {
+  color: white;
+  right: 50%;
+  margin-right: 13px;
+  text-shadow: -1px 1px 3px #b00, -1px -1px 3px #b00, 1px 0px 3px #b00;
+}
+
+.actionlink.fund {
+  color: #b00;
+  left: 50%;
+  margin-left: 15px;
+}
+
+.actionlink:hover {
+  text-decoration: underline;
+}
+
+.actionlink a {
+  color: inherit;
+}
+
+.actionsleft {
+  float: left;
+}
+
+.actionsright {
+  float: right;
+  text-align: right;
+}
+
+@media screen and (max-width: 800px) {
+  .actions {
+    padding-top: 120px;
+  }
+  .actionsleft, .actionsright {
+    float: none;
+    text-align: left;
+    margin-bottom: 1em;
+  }
+}
+
+th {
+  text-decoration: underline;
+  font-weight: normal;
+  text-align: left;
+}
+
+#features ul {
+  list-style: none;
+  margin: 0 0 1em;
+  padding: 0 0 0 1.2em;
+}
+
+#features li:before {
+  content: "-";
+  width: 1em;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  margin-left: -1em;
+}
+
+.rel {
+  margin-bottom: 0;
+}
+.rel-note {
+  margin-top: 0;
+  color: #555;
+}
+
+pre {
+  padding-left: 15px;
+  border-left: 2px solid #ddd;
+}
+
+code {
+  padding: 0 2px;
+}
+
+strong {
+  text-decoration: underline;
+  font-weight: normal;
+}
+
+.field {
+  border: 1px solid #A21313;
+}
+
+*:not(.CodeMirror-merge-pane) > .CodeMirror,
+.CodeMirror-merge.CodeMirror-merge-2pane,
+.CodeMirror-merge.CodeMirror-merge-3pane {
+  width: 100%;
+  height: 100% !important;
+  resize: none;
+}
+.CodeMirror-merge-2pane .CodeMirror-merge-pane,
+.CodeMirror-merge-2pane .CodeMirror-merge-pane > div,
+.CodeMirror-merge-3pane .CodeMirror-merge-pane,
+.CodeMirror-merge-3pane .CodeMirror-merge-pane > div {
+  height: 100% !important;
+  resize: none;
+}
+  </style>
+</head>
+<body>
+<article>
+<h2>
+  <span style="margin-right: 20px; white-space: nowrap; font-size: 70%;">Mode: <select id="myModeChooser" onchange="myChangeMode(this.selectedOptions[0].value)"></select></span>
+  <span style="margin-right: 20px; white-space: nowrap; font-size: 70%;">Theme: <select onchange="myChangeTheme(this.selectedOptions[0].value)" id="myThemeChooser">
+    <option value="default" selected>default</option>
+    <option value="3024-day">3024-day</option>
+    <option value="3024-night">3024-night</option>
+    <option value="4d">4D</option>
+    <option value="abcdef">abcdef</option>
+    <option value="ambiance">ambiance</option>
+    <option value="base16-dark">base16-dark</option>
+    <option value="base16-light">base16-light</option>
+    <option value="bespin">bespin</option>
+    <option value="blackboard">blackboard</option>
+    <option value="cobalt">cobalt</option>
+    <option value="colorforth">colorforth</option>
+    <option value="darcula">darcula</option>
+    <option value="dracula">dracula</option>
+    <option value="duotone-dark">duotone-dark</option>
+    <option value="duotone-light">duotone-light</option>
+    <option value="eclipse">eclipse</option>
+    <option value="elegant">elegant</option>
+    <option value="erlang-dark">erlang-dark</option>
+    <option value="gruvbox-dark">gruvbox-dark</option>
+    <option value="hopscotch">hopscotch</option>
+    <option value="icecoder">icecoder</option>
+    <option value="idea">idea</option>
+    <option value="isotope">isotope</option>
+    <option value="lesser-dark">lesser-dark</option>
+    <option value="liquibyte">liquibyte</option>
+    <option value="lucario">lucario</option>
+    <option value="material">material</option>
+    <option value="mbo">mbo</option>
+    <option value="mdn-like">mdn-like</option>
+    <option value="midnight">midnight</option>
+    <option value="monokai">monokai</option>
+    <option value="neat">neat</option>
+    <option value="neo">neo</option>
+    <option value="night">night</option>
+    <option value="nord">nord</option>
+    <option value="oceanic-next">oceanic-next</option>
+    <option value="panda-syntax">panda-syntax</option>
+    <option value="paraiso-dark">paraiso-dark</option>
+    <option value="paraiso-light">paraiso-light</option>
+    <option value="pastel-on-dark">pastel-on-dark</option>
+    <option value="railscasts">railscasts</option>
+    <option value="rubyblue">rubyblue</option>
+    <option value="seti">seti</option>
+    <option value="shadowfox">shadowfox</option>
+    <option value="solarized dark">solarized dark</option>
+    <option value="solarized light">solarized light</option>
+    <option value="the-matrix">the-matrix</option>
+    <option value="tomorrow-night-bright">tomorrow-night-bright</option>
+    <option value="tomorrow-night-eighties">tomorrow-night-eighties</option>
+    <option value="ttcn">ttcn</option>
+    <option value="twilight">twilight</option>
+    <option value="vibrant-ink">vibrant-ink</option>
+    <option value="xq-dark">xq-dark</option>
+    <option value="xq-light">xq-light</option>
+    <option value="yeti">yeti</option>
+    <option value="yonce">yonce</option>
+    <option value="zenburn">zenburn</option>
+    </select></span>
+  <span style="margin-right: 12px; white-space: nowrap; font-size: 12px; color: rgb(188, 188, 188); opacity: 0.3;" title="Ctrl-F / Cmd-F&#13;Start searching&#13;&#13;Ctrl-G / Cmd-G&#13;Find next&#13;&#13;Shift-Ctrl-G / Shift-Cmd-G&#13;Find previous&#13;&#13;Shift-Ctrl-F / Cmd-Option-F&#13;Replace&#13;&#13;Shift-Ctrl-R / Shift-Cmd-Option-F&#13;Replace all">&#128269;</span>
+  <span style="margin-right: 12px; white-space: nowrap; font-size: 12px; color: rgb(188, 188, 188);" title="Alt-Left: goSubwordLeft&#13;Alt-Right: goSubwordRight&#13;Cmd-Up: scrollLineUp&#13;Cmd-Down: scrollLineDown&#13;Shift-Cmd-L: splitSelectionByLine&#13;Alt-Tab: indentLess&#13;Esc: singleSelectionTop&#13;Cmd-L: selectLine&#13;Shift-Cmd-K: deleteLine&#13;Cmd-Enter: insertLineAfter&#13;Shift-Cmd-Enter: insertLineBefore&#13;Cmd-D: selectNextOccurrence&#13;Shift-Cmd-Space: selectScope&#13;Shift-Cmd-M: selectBetweenBrackets&#13;Cmd-M: goToBracket&#13;Cmd-Ctrl-Up: swapLineUp&#13;Cmd-Ctrl-Down: swapLineDown&#13;Cmd-/: toggleComment&#13;Cmd-J: joinLines&#13;Ctrl-J: jumpToMatchingTag&#13;Shift-Cmd-D: duplicateLine&#13;Cmd-T: transposeChars&#13;F9: sortLines&#13;Cmd-F9: sortLinesInsensitive&#13;F2: nextBookmark&#13;Shift-F2: prevBookmark&#13;Cmd-F2: toggleBookmark&#13;Shift-Cmd-F2: clearBookmarks&#13;Alt-F2: selectBookmarks&#13;Alt-Q: wrapLines&#13;Cmd-K Cmd-Backspace: delLineLeft&#13;Backspace: smartBackspace&#13;Cmd-K Cmd-K: delLineRight&#13;Cmd-K Cmd-U: upcaseAtCursor&#13;Cmd-K Cmd-L: downcaseAtCursor&#13;Cmd-K Cmd-Space: setSublimeMark&#13;Cmd-K Cmd-A: selectToSublimeMark&#13;Cmd-K Cmd-W: deleteToSublimeMark&#13;Cmd-K Cmd-X: swapWithSublimeMark&#13;Cmd-K Cmd-Y: sublimeYank&#13;Cmd-K Cmd-G: clearBookmarks&#13;Cmd-K Cmd-C: showInCenter&#13;Shift-Alt-Up: selectLinesUpward&#13;Shift-Alt-Down: selectLinesDownward&#13;Cmd-F3: findUnder&#13;Shift-Cmd-F3: findUnderPrevious&#13;Ctrl-Q: fold&#13;Shift-Cmd-[: fold&#13;Shift-Cmd-]: unfold&#13;Cmd-K Cmd-j: unfoldAll&#13;Cmd-K Cmd-0: unfoldAll&#13;Cmd-H: replace">Keymap</span>
+  <span style="margin-right: 12px; white-space: nowrap; font-size: 12px; color: rgb(188, 188, 188);">Shift-Tab=AutoIndent</span><span style="clear: both;"></span>
+  <span style="margin-right: 12px; white-space: nowrap; font-size: 12px; color: rgb(188, 188, 188);">Alt-Tab=IndentLess</span><span style="clear: both;"></span>
+
+  <div>
+    <select tabindex="-1" id="mySetSpec5" name="SetSpec5" style="margin-left: 0px; max-width: 110px;" onchange="setSpecials([dv.edit, dv.rightOriginal()], this); return false" autocomplete="off">
+      <option value="placeholder">Specials</option>
+      <option value="MiniLeft">Minify-Left</option>
+      <option value="MiniRight">Minify-Right</option>
+      <option value="MiniBoth">Minify-Both</option>
+      <option value="ReparseLeft">Reparse-Left</option>
+      <option value="ReparseRight">Reparse-Right</option>
+      <option value="ReparseBoth">Reparse-Both</option>
+      <option value="ReparseLeftToRight">Reparse-LeftToRight</option>
+      <option value="ReparseRightToLeft">Reparse-RightToLeft</option>
+      <option value="insReturnLeft">insertReturnBettweenTags-Left</option>
+      <option value="insReturnRight">insertReturnBettweenTags-Right</option>
+      <option value="insReturnBoth">insertReturnBettweenTags-Both</option>
+      <option value="delStrLeft">Delete"Strings"Content-Left</option>
+      <option value="delStrRight">Delete"Strings"Content-Right</option>
+      <option value="delStrBoth">Delete"Strings"Content-Both</option>
+      <option value="delStyleLeft">DeleteStylesContent-Left</option>
+      <option value="delStyleRight">DeleteStylesContent-Right</option>
+      <option value="delStyleBoth">DeleteStylesContent-Both</option>
+      <option value="delScriptLeft">DeleteScriptsContent-Left</option>
+      <option value="delScriptRight">DeleteScriptsContent-Right</option>
+      <option value="delScriptBoth">DeleteScriptsContent-Both</option>
+      <option value="delLinkHRefLeft">DeleteLinkHRef-Left</option>
+      <option value="delLinkHRefRight">DeleteLinkHRef-Right</option>
+      <option value="delLinkHRefBoth">DeleteLinkHRef-Both</option>
+      <option value="delScriptSrcLeft">DeleteScriptSrc-Left</option>
+      <option value="delScriptSrcRight">DeleteScriptSrc-Right</option>
+      <option value="delScriptSrcBoth">DeleteScriptSrc-Both</option>
+      <option value="delTxtNodesLeft">DeleteTxtNodes-Left</option>
+      <option value="delTxtNodesRight">DeleteTxtNodes-Right</option>
+      <option value="delTxtNodesBoth">DeleteTxtNodes-Both</option>
+      <option value="get_HTML_SourceCode">get_HTML_SourceCode</option>
+    </select>
+    <select tabindex="-1" id="mySetOpt5" name="SetOpt5" style="margin-left: 10px; max-width: 110px;" onchange="setMyEditorOpt([dv.edit, dv.rightOriginal()], this); return false" autocomplete="off">
+      <option value="placeholder">Options</option>
+      <option value="LWon">LineWrap-ON</option>
+      <option value="LWoff">LineWrap-OFF</option>
+      <option value="STSon">showTrailingSpace-ON</option>
+      <option value="STSoff">showTrailingSpace-OFF</option>
+    </select>
+    <select tabindex="-1" id="mySetOptCommandsLeft" name="SetOptCommandsLeft" style="margin-left: 10px; max-width: 100px;" onchange="commandEditor('mergeleft', this.value); this.options[0].selected = true; return false" autocomplete="off">
+      <option value="placeholder">Cmd on left</option>
+      <option value="autocomplete">autocomplete(editor, getHints, options)</option>
+      <option value="clearBookmarks">clearBookmarks(editor)</option>
+      <option value="clearSearch">clearSearch(editor)</option>
+      <option value="defaultTab">defaultTab(editor)</option>
+      <option value="delCharAfter">delCharAfter(editor)</option>
+      <option value="delCharBefore">delCharBefore(editor)</option>
+      <option value="delGroupAfter">delGroupAfter(editor)</option>
+      <option value="delGroupBefore">delGroupBefore(editor)</option>
+      <option value="delLineLeft">delLineLeft(editor)</option>
+      <option value="delLineRight">delLineRight(editor)</option>
+      <option value="delWordAfter">delWordAfter(editor)</option>
+      <option value="delWordBefore">delWordBefore(editor)</option>
+      <option value="delWrappedLineLeft">delWrappedLineLeft(editor)</option>
+      <option value="delWrappedLineRight">delWrappedLineRight(editor)</option>
+      <option value="deleteLine">deleteLine(editor)</option>
+      <option value="deleteToSublimeMark">deleteToSublimeMark(editor)</option>
+      <option value="downcaseAtCursor">downcaseAtCursor(editor)</option>
+      <option value="duplicateLine">duplicateLine(editor)</option>
+      <option value="find">find(editor)</option>
+      <option value="findAllUnder">findAllUnder(editor)</option>
+      <option value="findNext">findNext(editor, rev)</option>
+      <option value="findPrev">findPrev(editor)</option>
+      <option value="findUnder">findUnder(editor)</option>
+      <option value="findUnderPrevious">findUnderPrevious(editor)</option>
+      <option value="findPersistent">findPersistent(editor)</option>
+      <option value="findPersistentNext">findPersistentNext(editor)</option>
+      <option value="findPersistentPrev">findPersistentPrev(editor)</option>
+      <option value="fold">fold(editor)</option>
+      <option value="foldAll">foldAll(editor)</option>
+      <option value="goCharLeft">goCharLeft(editor)</option>
+      <option value="goCharRight">goCharRight(editor)</option>
+      <option value="goColumnLeft">goColumnLeft(editor)</option>
+      <option value="goColumnRight">goColumnRight(editor)</option>
+      <option value="goDocEnd">goDocEnd(editor)</option>
+      <option value="goDocStart">goDocStart(editor)</option>
+      <option value="goGroupLeft">goGroupLeft(editor)</option>
+      <option value="goGroupRight">goGroupRight(editor)</option>
+      <option value="goLineDown">goLineDown(editor)</option>
+      <option value="goLineEnd">goLineEnd(editor)</option>
+      <option value="goLineLeft">goLineLeft(editor)</option>
+      <option value="goLineLeftSmart">goLineLeftSmart(editor)</option>
+      <option value="goLineRight">goLineRight(editor)</option>
+      <option value="goLineStart">goLineStart(editor)</option>
+      <option value="goLineStartSmart">goLineStartSmart(editor)</option>
+      <option value="goLineUp">goLineUp(editor)</option>
+      <option value="goNextDiff">goNextDiff(editor)</option>
+      <option value="goPageDown">goPageDown(editor)</option>
+      <option value="goPageUp">goPageUp(editor)</option>
+      <option value="goPrevDiff">goPrevDiff(editor)</option>
+      <option value="goSubwordLeft">goSubwordLeft(editor)</option>
+      <option value="goSubwordRight">goSubwordRight(editor)</option>
+      <option value="goToBracket">goToBracket(editor)</option>
+      <option value="goWordLeft">goWordLeft(editor)</option>
+      <option value="goWordRight">goWordRight(editor)</option>
+      <option value="indentAuto">indentAuto(editor)</option>
+      <option value="indentLess">indentLess(editor)</option>
+      <option value="indentMore">indentMore(editor)</option>
+      <option value="insertLineAfter">insertLineAfter(editor)</option>
+      <option value="insertLineBefore">insertLineBefore(editor)</option>
+      <option value="insertSoftTab">insertSoftTab(editor)</option>
+      <option value="insertTab">insertTab(editor)</option>
+      <option value="joinLines">joinLines(editor)</option>
+      <option value="killLine">killLine(editor)</option>
+      <option value="newlineAndIndent">newlineAndIndent(editor)</option>
+      <option value="nextBookmark">nextBookmark(editor)</option>
+      <option value="prevBookmark">prevBookmark(editor)</option>
+      <option value="redo">redo(editor)</option>
+      <option value="redoSelection">redoSelection(editor)</option>
+      <option value="replace">replace(editor, all)</option>
+      <option value="replaceAll">replaceAll(editor)</option>
+      <option value="scrollLineDown">scrollLineDown(editor)</option>
+      <option value="scrollLineUp">scrollLineUp(editor)</option>
+      <option value="selectAll">selectAll(editor)</option>
+      <option value="selectBetweenBrackets">selectBetweenBrackets(editor)</option>
+      <option value="selectBookmarks">selectBookmarks(editor)</option>
+      <option value="selectLine">selectLine(editor)</option>
+      <option value="selectLinesDownward">selectLinesDownward(editor)</option>
+      <option value="selectLinesUpward">selectLinesUpward(editor)</option>
+      <option value="selectNextOccurrence">selectNextOccurrence(editor)</option>
+      <option value="selectScope">selectScope(editor)</option>
+      <option value="selectToSublimeMark">selectToSublimeMark(editor)</option>
+      <option value="setSublimeMark">setSublimeMark(editor)</option>
+      <option value="showInCenter">showInCenter(editor)</option>
+      <option value="singleSelection">singleSelection(editor)</option>
+      <option value="singleSelectionTop">singleSelectionTop(editor)</option>
+      <option value="smartBackspace">smartBackspace(editor)</option>
+      <option value="sortLines">sortLines(editor)</option>
+      <option value="sortLinesInsensitive">sortLinesInsensitive(editor)</option>
+      <option value="splitSelectionByLine">splitSelectionByLine(editor)</option>
+      <option value="sublimeYank">sublimeYank(editor)</option>
+      <option value="swapLineDown">swapLineDown(editor)</option>
+      <option value="swapLineUp">swapLineUp(editor)</option>
+      <option value="swapWithSublimeMark">swapWithSublimeMark(editor)</option>
+      <option value="toMatchingTag">toMatchingTag(editor)</option>
+      <option value="toggleBookmark">toggleBookmark(editor)</option>
+      <option value="toggleComment">toggleComment(editor)</option>
+      <option value="toggleFold">toggleFold(editor)</option>
+      <option value="toggleOverwrite">toggleOverwrite(editor)</option>
+      <option value="transposeChars">transposeChars(editor)</option>
+      <option value="undo">undo(editor)</option>
+      <option value="undoSelection">undoSelection(editor)</option>
+      <option value="unfold">unfold(editor)</option>
+      <option value="unfoldAll">unfoldAll(editor)</option>
+      <option value="upcaseAtCursor">upcaseAtCursor(editor)</option>
+      <option value="wrapLines">wrapLines(editor)</option>
+    </select>
+    <select tabindex="-1" id="mySetOptCommandsRight" name="SetOptCommandsRight" style="margin-left: 10px; max-width: 100px;" onchange="commandEditor('mergeright', this.value); this.options[0].selected = true; return false" autocomplete="off">
+      <option value="placeholder">Cmd on right</option>
+      <option value="autocomplete">autocomplete(editor, getHints, options)</option>
+      <option value="clearBookmarks">clearBookmarks(editor)</option>
+      <option value="clearSearch">clearSearch(editor)</option>
+      <option value="defaultTab">defaultTab(editor)</option>
+      <option value="delCharAfter">delCharAfter(editor)</option>
+      <option value="delCharBefore">delCharBefore(editor)</option>
+      <option value="delGroupAfter">delGroupAfter(editor)</option>
+      <option value="delGroupBefore">delGroupBefore(editor)</option>
+      <option value="delLineLeft">delLineLeft(editor)</option>
+      <option value="delLineRight">delLineRight(editor)</option>
+      <option value="delWordAfter">delWordAfter(editor)</option>
+      <option value="delWordBefore">delWordBefore(editor)</option>
+      <option value="delWrappedLineLeft">delWrappedLineLeft(editor)</option>
+      <option value="delWrappedLineRight">delWrappedLineRight(editor)</option>
+      <option value="deleteLine">deleteLine(editor)</option>
+      <option value="deleteToSublimeMark">deleteToSublimeMark(editor)</option>
+      <option value="downcaseAtCursor">downcaseAtCursor(editor)</option>
+      <option value="duplicateLine">duplicateLine(editor)</option>
+      <option value="find">find(editor)</option>
+      <option value="findAllUnder">findAllUnder(editor)</option>
+      <option value="findNext">findNext(editor, rev)</option>
+      <option value="findPrev">findPrev(editor)</option>
+      <option value="findUnder">findUnder(editor)</option>
+      <option value="findUnderPrevious">findUnderPrevious(editor)</option>
+      <option value="findPersistent">findPersistent(editor)</option>
+      <option value="findPersistentNext">findPersistentNext(editor)</option>
+      <option value="findPersistentPrev">findPersistentPrev(editor)</option>
+      <option value="fold">fold(editor)</option>
+      <option value="foldAll">foldAll(editor)</option>
+      <option value="goCharLeft">goCharLeft(editor)</option>
+      <option value="goCharRight">goCharRight(editor)</option>
+      <option value="goColumnLeft">goColumnLeft(editor)</option>
+      <option value="goColumnRight">goColumnRight(editor)</option>
+      <option value="goDocEnd">goDocEnd(editor)</option>
+      <option value="goDocStart">goDocStart(editor)</option>
+      <option value="goGroupLeft">goGroupLeft(editor)</option>
+      <option value="goGroupRight">goGroupRight(editor)</option>
+      <option value="goLineDown">goLineDown(editor)</option>
+      <option value="goLineEnd">goLineEnd(editor)</option>
+      <option value="goLineLeft">goLineLeft(editor)</option>
+      <option value="goLineLeftSmart">goLineLeftSmart(editor)</option>
+      <option value="goLineRight">goLineRight(editor)</option>
+      <option value="goLineStart">goLineStart(editor)</option>
+      <option value="goLineStartSmart">goLineStartSmart(editor)</option>
+      <option value="goLineUp">goLineUp(editor)</option>
+      <option value="goNextDiff">goNextDiff(editor)</option>
+      <option value="goPageDown">goPageDown(editor)</option>
+      <option value="goPageUp">goPageUp(editor)</option>
+      <option value="goPrevDiff">goPrevDiff(editor)</option>
+      <option value="goSubwordLeft">goSubwordLeft(editor)</option>
+      <option value="goSubwordRight">goSubwordRight(editor)</option>
+      <option value="goToBracket">goToBracket(editor)</option>
+      <option value="goWordLeft">goWordLeft(editor)</option>
+      <option value="goWordRight">goWordRight(editor)</option>
+      <option value="indentAuto">indentAuto(editor)</option>
+      <option value="indentLess">indentLess(editor)</option>
+      <option value="indentMore">indentMore(editor)</option>
+      <option value="insertLineAfter">insertLineAfter(editor)</option>
+      <option value="insertLineBefore">insertLineBefore(editor)</option>
+      <option value="insertSoftTab">insertSoftTab(editor)</option>
+      <option value="insertTab">insertTab(editor)</option>
+      <option value="joinLines">joinLines(editor)</option>
+      <option value="killLine">killLine(editor)</option>
+      <option value="newlineAndIndent">newlineAndIndent(editor)</option>
+      <option value="nextBookmark">nextBookmark(editor)</option>
+      <option value="prevBookmark">prevBookmark(editor)</option>
+      <option value="redo">redo(editor)</option>
+      <option value="redoSelection">redoSelection(editor)</option>
+      <option value="replace">replace(editor, all)</option>
+      <option value="replaceAll">replaceAll(editor)</option>
+      <option value="scrollLineDown">scrollLineDown(editor)</option>
+      <option value="scrollLineUp">scrollLineUp(editor)</option>
+      <option value="selectAll">selectAll(editor)</option>
+      <option value="selectBetweenBrackets">selectBetweenBrackets(editor)</option>
+      <option value="selectBookmarks">selectBookmarks(editor)</option>
+      <option value="selectLine">selectLine(editor)</option>
+      <option value="selectLinesDownward">selectLinesDownward(editor)</option>
+      <option value="selectLinesUpward">selectLinesUpward(editor)</option>
+      <option value="selectNextOccurrence">selectNextOccurrence(editor)</option>
+      <option value="selectScope">selectScope(editor)</option>
+      <option value="selectToSublimeMark">selectToSublimeMark(editor)</option>
+      <option value="setSublimeMark">setSublimeMark(editor)</option>
+      <option value="showInCenter">showInCenter(editor)</option>
+      <option value="singleSelection">singleSelection(editor)</option>
+      <option value="singleSelectionTop">singleSelectionTop(editor)</option>
+      <option value="smartBackspace">smartBackspace(editor)</option>
+      <option value="sortLines">sortLines(editor)</option>
+      <option value="sortLinesInsensitive">sortLinesInsensitive(editor)</option>
+      <option value="splitSelectionByLine">splitSelectionByLine(editor)</option>
+      <option value="sublimeYank">sublimeYank(editor)</option>
+      <option value="swapLineDown">swapLineDown(editor)</option>
+      <option value="swapLineUp">swapLineUp(editor)</option>
+      <option value="swapWithSublimeMark">swapWithSublimeMark(editor)</option>
+      <option value="toMatchingTag">toMatchingTag(editor)</option>
+      <option value="toggleBookmark">toggleBookmark(editor)</option>
+      <option value="toggleComment">toggleComment(editor)</option>
+      <option value="toggleFold">toggleFold(editor)</option>
+      <option value="toggleOverwrite">toggleOverwrite(editor)</option>
+      <option value="transposeChars">transposeChars(editor)</option>
+      <option value="undo">undo(editor)</option>
+      <option value="undoSelection">undoSelection(editor)</option>
+      <option value="unfold">unfold(editor)</option>
+      <option value="unfoldAll">unfoldAll(editor)</option>
+      <option value="upcaseAtCursor">upcaseAtCursor(editor)</option>
+      <option value="wrapLines">wrapLines(editor)</option>
+    </select><span title="Formatting-Left (only HTML/XML/CSS/JS/JSON...)" onclick="autoFormatSelection(dv.edit); return false" style="cursor: pointer; margin-left: 10px; opacity: 1; font-size: 12px;">&#128154;</span><span title="Formatting-Right (only HTML/XML/CSS/JS/JSON...)" onclick="autoFormatSelection(dv.rightOriginal()); return false" style="cursor: pointer; margin-left: 10px; opacity: 1; font-size: 12px;">&#128153;</span>
+    <span style="clear: both;"></span>
+  </div>
+</h2>
+<p>
+<span style="font-size: 13px;">CountDiffs: <span id="myCountDiffs">0</span></span>&nbsp;
+<span class="clicky" onclick="dv.edit.execCommand('goPrevDiff'); return false">&lt;&lt; prev-diff</span>&nbsp;
+<span class="clicky" onclick="dv.edit.execCommand('goNextDiff'); return false">next-diff &gt;&gt;</span>&nbsp;
+<span class="clicky" onclick="panes = 2; initUI()">2panes</span>&nbsp;
+<span class="clicky" onclick="panes = 3; initUI()">3panes</span>&nbsp;
+<span class="clicky" onclick="toggleDifferences()">showDiffs ON/OFF</span>&nbsp;
+<span class="clicky" onclick="connect = connect ? null : 'align'; initUI()">align/pad changed sections</span>&nbsp;
+<span class="clicky" onclick="collapse = !collapse; initUI()">collapse/expand unchanged</span>
+</p>
+
+<div id="view" style="display: block; min-width: 100%; clear: both; height: 350px; resize: vertical; overflow: auto; margin-right: 1px; background-color: rgba(255, 255, 255, 0.33); padding-bottom: 15px;" onmousemove="if(this.dataset.lastheight !== this.style.height) {this.dataset.lastheight = this.style.height; dv.edit.refresh(); dv.rightOriginal().refresh();}"></div>
+
+<div style="margin-top: 16px; position: relative;">
+<table style="width: 100%; border: 1px solid lightgrey;" cellpadding="2" border="0">
+<tbody>
+<tr>
+<th style="background-color: grey; color: white; text-align: center; width: 50%;">Diffs-Left</th>
+<th style="background-color: white; color: white; text-align: center; width: 60px; min-width: 60px; max-width: 60px; ">&nbsp;</th>
+<th style="background-color: grey; color: white; text-align: center; width: 50%;">Diffs-Right</th>
+</tr>
+<tr>
+<td id="myDiffsLeft" style="width: 50%; text-align: right; white-space: pre;" valign="top"></td>
+<td style="background-color: white; color: white; text-align: center; width: 60px; min-width: 60px; max-width: 60px; ">&nbsp;</td>
+<td id="myDiffsRight" style="width: 50%; text-align: left; white-space: pre;" valign="top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<script>
+var value, orig1, orig2, dv, panes = 2, highlight = true, connect = null, collapse = false;
+function initUI() {
+  if (value == null) return;
+  var target = document.getElementById('view');
+  target.innerHTML = '';
+  if (dv) {
+    if (dv.editor()) value = dv.editor().getValue();
+    if (dv.leftOriginal()) orig1 = dv.leftOriginal().getValue();
+    if (dv.rightOriginal()) orig2 = dv.rightOriginal().getValue();
+  }
+  dv = CodeMirror.MergeView(target, {
+    value: value,
+    origLeft: panes == 3 ? orig1 : null,
+    orig: orig2,
+    lineNumbers: true,
+    lineWrapping: false,
+    matchBrackets: true,
+    mode: CodeMirror.findModeByName(document.getElementById('myModeChooser').selectedOptions[0].value).mime,
+    theme: document.getElementById('myThemeChooser').selectedOptions[0].value,
+    showTrailingSpace: true,
+    selectionPointer: true,
+    styleActiveLine: true,
+    matchTags: {bothTags: true},
+    highlightDifferences: highlight,
+    connect: connect,
+    collapseIdentical: collapse,
+    allowEditingOriginals: true,
+    keyMap: "sublime",
+    indentUnit: 2,
+    smartIndent: true,
+    indentWithTabs: true,
+    tabSize: 2,
+    scrollbarStyle: "simple",
+    foldGutter: {rangeFinder: new CodeMirror.fold.combine(CodeMirror.fold.indent, CodeMirror.fold.comment)},
+    gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
+  });
+  dv.editor().on('change', function(cm, change) { setTimeout(function(){ myMergeViewOnChanged(cm, change); }, 255); });
+  dv.rightOriginal().on('change', function(cm, change) { setTimeout(function(){ myMergeViewOnChanged(cm, change); }, 255); });  
+}
+
+function toggleDifferences() {
+  dv.setShowDifferences(highlight = !highlight);
+}
+
+window.onload = function() {
+  var i, myModes, myEl, myNewEl;
+  myModes = CodeMirror.modeInfo.map(function(a) {return a.name;});
+  myModes.sort();
+  myEl = document.getElementById('myModeChooser');
+  for (i = 0; i < myModes.length; i++) {
+    newEl = document.createElement('option');
+    newEl.setAttribute('value', myModes[i]);
+    if (myModes[i] === 'Plain Text') newEl.setAttribute('selected', 'selected');
+    newEl.innerHTML = myModes[i];
+    myEl.appendChild(newEl);
+  }
+
+  value = "C_OBJECT($employees;$employee)\n\n$regExp1:=\"^[\\\\+\\\\-\\\\*\\\\/&|\\\\\\\\\\\\^<>=#%]\"  // $regExp1:=\"^[\\\\+\\\\-\\\\*\\\\/&|\\\\\\\\\\\\^<>=#%]\"\n$regExp2:=\"^((<=)|(>=)|(\\\\:=)|(\\\\^\\\\|)|(<<)|(>>)|(\\\\?\\\\+)|(\\\\?\\\\-)|(\\\\?\\\\?))\"  // $regExp2:=\"^((<=)|(>=)|(\\\\:=)|(\\\\^\\\\|)|(<<)|(>>)|(\\\\?\\\\+)|(\\\\?\\\\-)|(\\\\?\\\\?))\"\n\n$employees:=ds.Employee.query(\"lastName = :1\";\"S@\")\n$employee:=ds.Employee.new()\n$employee.lastName:=\"Smith\"\n$employee.save()\n$employees.add($employee) //The $employee entity is added to the $employees entity selection\n\n$Find:=Request(\"Type a name\")\nIf(OK=1)\n   QUERY([People];[People]LastName=$Find)\nElse\n   ALERT(\"You did not enter a name.\")\nEnd if\n\nFor($vlChar;1;Length(vtSomeText))\n   If(Character code(vtSomeText[[$vlChar]])=Tab)\n      vtSomeText[[$vlChar]]):=\"x\"\n   End if\nEnd for\n\n$fieldName1:=Field name(->[Kunden]Nummer)\n$tabName2:=Table name(->[Kunden])\nIf ($vlResAttr ?? Purgeable resource bit)  // Is the resource purgeable?\n	$test:=(<>Klammeraffe#3)\nEnd if \nIf (($vlResAttr & Purgeable resource mask)#0)  //Is the resource purgeable?\n	IDLE\n	$bool:=((Length([Kunden]E_Mail)>0) & (Position(\"@\";[Kunden]E_Mail;*)>0))\nEnd if \n$vlResAttr:=$vlResAttr ?+ Purgeable resource bit\n$vlResAttr:=$vlResAttr | Purgeable resource bit\n$vlLong:=($viIntA << 16) | $viIntB  // Store two Integers in a Long Integer\n$vlIntA:=$vlLong >> 16  // Extract back the integer stored in the high-word\n$viIntB:=$vlLong & 0xFFFF  // Extract back the Integer stored in the low-word\n$bool:=(True#False)\n$bool:=(True=False)\n$bool:=(1<2)\n$bool:=(2>1)\n$bool:=($nr1<=$nr2)\n$bool:=($nr1>=$nr2)\n$bool:=(\"abc test xyz\"%\"test\")\n$bool:=zIsStringSame(\"abc\";\"ABC\")\n$bool:=zIsPointerType(->[Kunden];4)\nBegin SQL\n	SELECT count(*)\n	from Aboauftraege\n	where Aboauftraege.Kombi_Name <> :$Leer\n	and Aboauftraege.Kombi_AboNummer = :$KombiNr\n	into :$AnzAbos\nEnd SQL\nFor each ($item;$col)\n	$test:=$test+$item\nEnd for each \nCase of \n	: (False)\n		IDLE\n	: (True)\n		IDLE\nEnd case \nWhile (Boolean_Expression)\n	statement(s)\nEnd while \nRepeat \n	statement(s)\nUntil (Boolean_Expression)\nFor ($vlElem;1;Size of array(anArray))\n	anArray{$vlElem}:=Null\nEnd for \nFor each (emp;ds.Employees.query(\"country='UK'\"))\n	emp.salary:=emp.salary*1.03\n	emp.save()\nEnd for each \nUse (Shared_obj_or_Shared_collection)\n	statement(s)\nEnd use\n$myDate:=!1997-01-20!+9\n";
+  orig1 = value;
+  orig2 = value;
+  initUI();
+  let d = document.createElement('div');
+  d.style.cssText = 'width: 50px; margin: 7px; height: 14px';
+  dv.editor().addLineWidget(57, d);
+};
+
+function mergeViewHeight(mergeView) {
+  function editorHeight(editor) {
+    if (!editor) return 0;
+    return editor.getScrollInfo().height;
+  }
+  return Math.max(editorHeight(mergeView.leftOriginal()),
+                  editorHeight(mergeView.editor()),
+                  editorHeight(mergeView.rightOriginal()));
+}
+
+function resize(mergeView) {
+  var height = mergeViewHeight(mergeView);
+  for(;;) {
+    if (mergeView.leftOriginal())
+      mergeView.leftOriginal().setSize(null, height);
+    mergeView.editor().setSize(null, height);
+    if (mergeView.rightOriginal())
+      mergeView.rightOriginal().setSize(null, height);
+
+    var newHeight = mergeViewHeight(mergeView);
+    if (newHeight >= height) break;
+    else height = newHeight;
+  }
+  mergeView.wrap.style.height = height + 'px';
+}
+</script>
+
+<script>
+function myChangeMode(myModeName) {
+  var m, mode, spec;
+  if (CodeMirror.findModeByName(myModeName)) {
+    var info = CodeMirror.findModeByName(myModeName);
+    if (info) {
+      mode = info.mode;
+      spec = myModeName;
+    }
+  } else if (m = /.+\.([^.]+)$/.exec(myModeName)) {
+    var info = CodeMirror.findModeByExtension(m[1]);
+    if (info) {
+      mode = info.mode;
+      spec = info.mime;
+    }
+  } else if (/\//.test(myModeName)) {
+    var info = CodeMirror.findModeByMIME(myModeName);
+    if (info) {
+      mode = info.mode;
+      spec = myModeName;
+    }
+  } else {
+    mode = spec = myModeName;
+  }
+  if (mode) {
+    if (dv.editor()) {
+      dv.editor().setOption('mode', spec);
+      CodeMirror.autoLoadMode(dv.editor(), mode);
+    }
+    if (dv.leftOriginal()) {
+      dv.leftOriginal().setOption('mode', spec);
+      CodeMirror.autoLoadMode(dv.leftOriginal(), mode);
+    }
+    if (dv.rightOriginal()) {
+      dv.rightOriginal().setOption('mode', spec);
+      CodeMirror.autoLoadMode(dv.rightOriginal(), mode);
+    }
+    setTimeout(function(){ initUI(); }, 255)
+  } else {
+    alert('Could not find a mode corresponding to ' + myModeName);
+  }
+}
+
+function myMergeViewOnChanged (myCm, myChange) {
+  var i, myElLeft, myElRight, myLast, myNext;
+  document.getElementById('myCountDiffs').innerHTML = String(dv.rightChunks().length);
+  myElLeft = document.getElementById('myDiffsLeft');
+  myElRight = document.getElementById('myDiffsRight');
+  myElLeft.innerHTML = '';
+  myElRight.innerHTML = '';
+  myLast = 0;
+  myNext = 0;
+  for (i = 0; i < dv.right.diff.length; i++) {
+    if (dv.right.diff[i][0] === 1) {
+      myElLeft.textContent += dv.right.diff[i][1] + '\n';
+    } else if (dv.right.diff[i][0] === -1) {
+      myElRight.textContent += dv.right.diff[i][1] + '\n';
+    } else if (i < (dv.right.diff.length - 1)) {
+      myNext = dv.right.diff[i+1][0];
+      if (myNext === 1) {
+        myElRight.textContent += '\n' + dv.right.diff[i+1][1].replace(/[^\n]/g, '');
+      } else {
+        myElLeft.textContent += '\n' + dv.right.diff[i+1][1].replace(/[^\n]/g, '');
+      }
+    }
+    myLast = dv.right.diff[i][0];
+  }
+}
+</script>
+<script>
+  function myChangeThemeSet(myThemeName) {
+    if (dv.editor()) {
+      dv.editor().setOption('theme', myThemeName);
+    }
+    if (dv.leftOriginal()) {
+      dv.leftOriginal().setOption('theme', myThemeName);
+    }
+    if (dv.rightOriginal()) {
+      dv.rightOriginal().setOption('theme', myThemeName);
+    }
+    setTimeout(function(){ initUI(); }, 255)
+  }
+  
+  function myChangeTheme(myThemeName) {
+    if (myThemeName === 'default') {
+      myChangeThemeSet(myThemeName);
+      return;
+    }
+    var link = document.createElement('link');
+    link.onload = function() { myChangeThemeSet(myThemeName); };
+    link.rel = 'stylesheet';
+    link.media = 'all';
+    link.href = '../theme/' + myThemeName.replace('solarized dark', 'solarized').replace('solarized light', 'solarized') + '.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  }
+</script>
+
+<script>
+      /* ----------------------------------
+       * replaceAnyTextFragments Version 0.1
+       * Funktion zum Ersetzen von Anzeige-Texten
+       * Einschraenkung: Die Funktion nutzt rekursiven Aufruf, somit darf die DOM-Struktur nicht tiefer verschachtelt sein als die JS-Engine verschachtelte Aufrufe haendeln kann!
+       */
+      function replaceTextFragments(myEl, myOldTxt, myNewTxt) {
+        var myOldTxtExp = RegExp(String(myOldTxt).replace(/([.*+?^=!:${}()|[\]\/\\])/g, '\\$1'), 'g');
+        if ((myEl.tagName !== "SCRIPT") && (myEl.tagName !== "STYLE") && (myEl.tagName !== "NOSCRIPT") && (myEl = myEl.firstChild)) do {
+          replaceTextFragments(myEl, myOldTxt, myNewTxt);
+          if ((myEl.nodeType === 3) && (myEl.nodeValue.match(myOldTxtExp))) {
+            myEl.nodeValue = myEl.nodeValue.replace(myOldTxtExp, myNewTxt);
+          }
+        } while ((myEl = myEl.nextSibling));
+      }
+      
+      function insertAnyStyles(myCSS, myID) {
+        var myHead, myStyleNode;
+        myHead = document.head || document.getElementsByTagName('head')[0];
+        myStyleNode = document.createElement('style');
+        myStyleNode.setAttribute("type", "text/css");
+        if ((typeof myID === 'string') && (myID.length > 1)) {
+          myStyleNode.setAttribute("id", myID);
+        }
+        if (myStyleNode.styleSheet) {
+          myStyleNode.styleSheet.cssText = myCSS;  /* for IE */
+        } else if (typeof myStyleNode.textContent === 'string') {
+          myStyleNode.textContent = myCSS;
+        } else {
+          myStyleNode.appendChild(document.createTextNode(myCSS));
+        }
+        myHead.appendChild(myStyleNode);
+      }
+
+      function setBodyBGColor(myBGColor) {
+        if ((!(myBGColor)) || (typeof myBGColor !== 'string')) return false;
+        document.body.style.backgroundColor = myBGColor;
+      }
+
+      function insertInEditor(myEditorName, mySrc) {
+        if ((!(myEditorName)) || (typeof myEditorName !== 'string')) return false;
+        myEditorName = myEditorName.toLowerCase();
+        if (myEditorName === 'mergeleft') {
+          dv.edit.setValue(mySrc);
+        } else if (myEditorName === 'mergeright') {
+          dv.rightOriginal().setValue(mySrc);
+        } else if (myEditorName === 'mergeleft3') {
+          if (dv.leftOriginal()) dv.leftOriginal().setValue(mySrc);
+        }
+      }
+
+      function setEditorHeight(myEditorName, myHeight, myDiff) {
+        if ((!(myEditorName)) || (typeof myEditorName !== 'string')) return false;
+        myEditorName = myEditorName.toLowerCase();
+        if ((!(myHeight)) || (typeof myHeight !== 'string')) myHeight = 'calc';
+        if ((!(myDiff)) || (typeof myDiff !== 'string'))  {
+          myDiff = 15;
+        } else {
+          myDiff = parseInt(myDiff, 10);
+          if (isNaN(myDiff)) myDiff = 15;
+        }
+        if (myEditorName === 'merge') {
+          if (myHeight === 'calc') {
+            document.getElementById('box_editorsMerge').style.height = 'calc(100vh - ' + (document.getElementById('box_editorsMerge').offsetTop + myDiff) + 'px)';
+          } else {
+            document.getElementById('box_editorsMerge').style.height = myHeight;
+            if ((myHeight === 'auto') || (myHeight.indexOf('%') > 0)) {
+              dv.edit.refresh();
+              dv.rightOriginal().refresh();
+              document.getElementById('box_editorsMerge').style.height = (document.getElementById('box_editorsMerge').offsetHeight - myDiff) + 'px';
+            }
+          }
+          dv.edit.refresh();
+          dv.rightOriginal().refresh();
+        }
+      }
+/* ========= /2/lib/util/formatting.js ========= */
+/* ======
+var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+lineNumbers: true,
+mode: "htmlmixed"
+});
+CodeMirror.commands["selectAll"](editor);
+====== */
+function getSelectedRange(myEditor) {
+  return { from: myEditor.getCursor(true), to: myEditor.getCursor(false) };
+}
+function getAllRange(myEditor) {
+  return { from: myEditor.posFromIndex(0), to: myEditor.posFromIndex() };
+}
+function autoFormatSelection(myEditor) {
+  var range = getSelectedRange(myEditor);
+  myEditor.autoFormatRange(range.from, range.to);
+}
+function autoFormatAll(myEditor) {
+  var range = getAllRange(myEditor);
+  myEditor.autoFormatRange(range.from, range.to);
+}
+function commentSelection(myEditor, isComment) {
+  var range = getSelectedRange(myEditor);
+  myEditor.commentRange(isComment, range.from, range.to);
+}
+/* ============================================ */
+
+function setMyEditorOpt(myEditor, mySel) {
+  var myI;
+  for (myI = 0; myI < myEditor.length; myI++) {
+    if (mySel.value === 'LWon') {
+      myEditor[myI].setOption('lineWrapping', true);
+    } else if (mySel.value === 'LWoff') {
+      myEditor[myI].setOption('lineWrapping', false);
+    } else if (mySel.value === 'STSon') {
+      myEditor[myI].setOption('showTrailingSpace', true);
+    } else if (mySel.value === 'STSoff') {
+      myEditor[myI].setOption('showTrailingSpace', false);
+    } else if (mySel.value === 'MODEmixed') {
+      myEditor[myI].setOption('mode', mixedMode);
+      myEditor[myI].setOption('matchTags', {bothTags: true});
+      myEditor[myI].setOption('showTrailingSpace', true);
+      myEditor[myI].setOption('selectionPointer', true);
+      myEditor[myI].setOption('styleActiveLine', true);
+      myEditor[myI].setOption('lineNumbers', true);
+      myEditor[myI].setOption('lineWrapping', false);
+      myEditor[myI].setOption('extraKeys', {'Ctrl-Q': function(cm){ cm.foldCode(cm.getCursor()); }, 'Ctrl-Space': 'autocomplete', "Ctrl-J": "toMatchingTag"});
+      myEditor[myI].setOption('foldGutter', true);
+      myEditor[myI].setOption('gutters', ['CodeMirror-linenumbers', 'CodeMirror-foldgutter']);
+      myEditor[myI].setOption('indentUnit', 2);
+      myEditor[myI].setOption('smartIndent', true);
+      myEditor[myI].setOption('indentWithTabs', false);
+      myEditor[myI].setOption('tabSize', 2);
+      myEditor[myI].setOption('scrollbarStyle', 'simple');
+    } else if (mySel.value === 'MODEcss') {
+      myEditor[myI].setOption('mode', 'css');
+      myEditor[myI].setOption('showTrailingSpace', true);
+      myEditor[myI].setOption('styleActiveLine', true);
+      myEditor[myI].setOption('lineNumbers', true);
+      myEditor[myI].setOption('lineWrapping', false);
+      myEditor[myI].setOption('extraKeys', {"Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); }, "Ctrl-Space": "autocomplete"});
+      myEditor[myI].setOption('foldGutter', true);
+      myEditor[myI].setOption('gutters', ["CodeMirror-linenumbers", "CodeMirror-foldgutter", "CodeMirror-lint-markers"]);
+      myEditor[myI].setOption('indentUnit', 2);
+      myEditor[myI].setOption('smartIndent', true);
+      myEditor[myI].setOption('indentWithTabs', false);
+      myEditor[myI].setOption('tabSize', 2);
+      myEditor[myI].setOption('lint', true);
+      myEditor[myI].setOption('scrollbarStyle', "simple");
+    } else if (mySel.value === 'MODEjs') {
+      myEditor[myI].setOption('mode', {name: 'javascript', globalVars: true});
+      myEditor[myI].setOption('showTrailingSpace', true);
+      myEditor[myI].setOption('styleActiveLine', true);
+      myEditor[myI].setOption('lineNumbers', true);
+      myEditor[myI].setOption('lineWrapping', false);
+      myEditor[myI].setOption('extraKeys', {"Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); }, "Ctrl-Space": "autocomplete"});
+      myEditor[myI].setOption('keyMap', "sublime");
+      myEditor[myI].setOption('matchBrackets', true);
+      myEditor[myI].setOption('foldGutter', true);
+      myEditor[myI].setOption('gutters', ["CodeMirror-linenumbers", "CodeMirror-foldgutter", "CodeMirror-lint-markers"]);
+      myEditor[myI].setOption('indentUnit', 2);
+      myEditor[myI].setOption('smartIndent', true);
+      myEditor[myI].setOption('indentWithTabs', false);
+      myEditor[myI].setOption('tabSize', 2);
+      myEditor[myI].setOption('electricChars', true);
+      myEditor[myI].setOption('lint', true);
+      myEditor[myI].setOption('scrollbarStyle', "simple");
+    } else if (mySel.value === 'MODEjson') {
+      myEditor[myI].setOption('mode', 'application/json');
+      myEditor[myI].setOption('showTrailingSpace', true);
+      myEditor[myI].setOption('styleActiveLine', true);
+      myEditor[myI].setOption('lineNumbers', true);
+      myEditor[myI].setOption('lineWrapping', false);
+      myEditor[myI].setOption('extraKeys', {"Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); }});
+      myEditor[myI].setOption('foldGutter', true);
+      myEditor[myI].setOption('gutters', ["CodeMirror-linenumbers", "CodeMirror-foldgutter", "CodeMirror-lint-markers"]);
+      myEditor[myI].setOption('completeSingle', false);
+      myEditor[myI].setOption('indentUnit', 2);
+      myEditor[myI].setOption('smartIndent', true);
+      myEditor[myI].setOption('indentWithTabs', false);
+      myEditor[myI].setOption('tabSize', 2);
+      myEditor[myI].setOption('lint', true);
+      myEditor[myI].setOption('scrollbarStyle', "simple");
+    } else if (mySel.value === 'MODEhtml') {
+      myEditor[myI].setOption('mode', 'text/html');
+      myEditor[myI].setOption('showTrailingSpace', true);
+      myEditor[myI].setOption('selectionPointer', true);
+      myEditor[myI].setOption('styleActiveLine', true);
+      myEditor[myI].setOption('lineNumbers', true);
+      myEditor[myI].setOption('lineWrapping', false);
+      myEditor[myI].setOption('matchTags', {bothTags: true});
+      myEditor[myI].setOption('indentUnit', 2);
+      myEditor[myI].setOption('smartIndent', true);
+      myEditor[myI].setOption('indentWithTabs', false);
+      myEditor[myI].setOption('tabSize', 2);
+      myEditor[myI].setOption('scrollbarStyle', "simple");
+    } else {
+      // ignore
+    }
+  }
+  mySel.options[0].selected = true;
+}
+
+function setSpecials(myEditor, mySel) {
+  var myI;
+  for (myI = 0; myI < myEditor.length; myI++) {
+    if (mySel.value === 'MiniLeft') {
+      if (myI === 0) {
+        miniEditor(myEditor[myI]);
+      }
+    } else if (mySel.value === 'MiniRight') {
+      if (myI === 1) {
+        miniEditor(myEditor[myI]);
+      }
+    } else if (mySel.value === 'MiniBoth') {
+      miniEditor(myEditor[myI]);
+    } else if (mySel.value === 'ReparseLeft') {
+      if (myI === 0) {
+        myEditor[myI].setValue(new XMLSerializer().serializeToString(new DOMParser().parseFromString(myEditor[myI].getValue(), 'text/html')).replace(' xmlns="http://www.w3.org/1999/xhtml"', ''));
+      }
+    } else if (mySel.value === 'ReparseRight') {
+      if (myI === 1) {
+        myEditor[myI].setValue(new XMLSerializer().serializeToString(new DOMParser().parseFromString(myEditor[myI].getValue(), 'text/html')).replace(' xmlns="http://www.w3.org/1999/xhtml"', ''));
+      }
+    } else if (mySel.value === 'ReparseBoth') {
+      myEditor[myI].setValue(new XMLSerializer().serializeToString(new DOMParser().parseFromString(myEditor[myI].getValue(), 'text/html')).replace(' xmlns="http://www.w3.org/1999/xhtml"', ''));
+    } else if (mySel.value === 'ReparseLeftToRight') {
+      if (myI === 0) {
+        myEditor[1].setValue(new XMLSerializer().serializeToString(new DOMParser().parseFromString(myEditor[0].getValue(), 'text/html')).replace(' xmlns="http://www.w3.org/1999/xhtml"', ''));
+      }
+    } else if (mySel.value === 'ReparseRightToLeft') {
+      if (myI === 0) {
+        myEditor[0].setValue(new XMLSerializer().serializeToString(new DOMParser().parseFromString(myEditor[1].getValue(), 'text/html')).replace(' xmlns="http://www.w3.org/1999/xhtml"', ''));
+      }
+    } else if (mySel.value === 'insReturnLeft') {
+      if (myI === 0) {
+        myEditor[myI].setValue(myEditor[myI].getValue().replace(/(> *<)([a-z!\/])/g, '>\n<$2'));
+      }
+    } else if (mySel.value === 'insReturnRight') {
+      if (myI === 1) {
+        myEditor[myI].setValue(myEditor[myI].getValue().replace(/(> *<)([a-z!\/])/g, '>\n<$2'));
+      }
+    } else if (mySel.value === 'insReturnBoth') {
+      myEditor[myI].setValue(myEditor[myI].getValue().replace(/(> *<)([a-z!\/])/g, '>\n<$2'));
+    } else if (mySel.value === 'delStrLeft') {
+      if (myI === 0) {
+        myEditor[myI].setValue(myEditor[myI].getValue().replace(/(\u0022)([\S ]*?)(\u0022)/g, '$1$3'));
+      }
+    } else if (mySel.value === 'delStrRight') {
+      if (myI === 1) {
+        myEditor[myI].setValue(myEditor[myI].getValue().replace(/(\u0022)([\S ]*?)(\u0022)/g, '$1$3'));
+      }
+    } else if (mySel.value === 'delStrBoth') {
+      myEditor[myI].setValue(myEditor[myI].getValue().replace(/(\u0022)([\S ]*?)(\u0022)/g, '$1$3'));
+    } else if (mySel.value === 'delStyleLeft') {
+      if (myI === 0) {
+        myEditor[myI].setValue(myEditor[myI].getValue().replace(/(<style\b[^>]*>)([\S\s]*?)(<\/style>)/g, '$1$3'));
+      }
+    } else if (mySel.value === 'delStyleRight') {
+      if (myI === 1) {
+        myEditor[myI].setValue(myEditor[myI].getValue().replace(/(<style\b[^>]*>)([\S\s]*?)(<\/style>)/g, '$1$3'));
+      }
+    } else if (mySel.value === 'delStyleBoth') {
+      myEditor[myI].setValue(myEditor[myI].getValue().replace(/(<style\b[^>]*>)([\S\s]*?)(<\/style>)/g, '$1$3'));
+    } else if (mySel.value === 'delScriptLeft') {
+      if (myI === 0) {
+        myEditor[myI].setValue(myEditor[myI].getValue().replace(/(<script\b[^>]*>)([\S\s]*?)(<\/script>)/g, '$1$3'));
+      }
+    } else if (mySel.value === 'delScriptRight') {
+      if (myI === 1) {
+        myEditor[myI].setValue(myEditor[myI].getValue().replace(/(<script\b[^>]*>)([\S\s]*?)(<\/script>)/g, '$1$3'));
+      }
+    } else if (mySel.value === 'delScriptBoth') {
+      myEditor[myI].setValue(myEditor[myI].getValue().replace(/(<script\b[^>]*>)([\S\s]*?)(<\/script>)/g, '$1$3'));
+    } else if (mySel.value === 'delLinkHRefLeft') {
+      if (myI === 0) {
+        myEditor[myI].setValue(myEditor[myI].getValue().replace(/(<link.*href=\u0022)([\S ]*?)(\u0022)/g, '$1$3'));
+      }
+    } else if (mySel.value === 'delLinkHRefRight') {
+      if (myI === 1) {
+        myEditor[myI].setValue(myEditor[myI].getValue().replace(/(<link.*href=\u0022)([\S ]*?)(\u0022)/g, '$1$3'));
+      }
+    } else if (mySel.value === 'delLinkHRefBoth') {
+      myEditor[myI].setValue(myEditor[myI].getValue().replace(/(<link.*href=\u0022)([\S ]*?)(\u0022)/g, '$1$3'));
+    } else if (mySel.value === 'delScriptSrcLeft') {
+      if (myI === 0) {
+        myEditor[myI].setValue(myEditor[myI].getValue().replace(/(<script.*src=\u0022)([\S ]*?)(\u0022)/g, '$1$3'));
+      }
+    } else if (mySel.value === 'delScriptSrcRight') {
+      if (myI === 1) {
+        myEditor[myI].setValue(myEditor[myI].getValue().replace(/(<script.*src=\u0022)([\S ]*?)(\u0022)/g, '$1$3'));
+      }
+    } else if (mySel.value === 'delScriptSrcBoth') {
+      myEditor[myI].setValue(myEditor[myI].getValue().replace(/(<script.*src=\u0022)([\S ]*?)(\u0022)/g, '$1$3'));
+    } else if (mySel.value === 'delTxtNodesLeft') {
+      if (myI === 0) {
+        myEditor[myI].setValue(myEditor[myI].getValue().replace(/(<([\w]*?)\b[^>]*>)([^<>][\S\s][^<>]*?)(<\/([\w]*?)>)/g, '$1$4'));
+      }
+    } else if (mySel.value === 'delTxtNodesRight') {
+      if (myI === 1) {
+        myEditor[myI].setValue(myEditor[myI].getValue().replace(/(<([\w]*?)\b[^>]*>)([^<>][\S\s][^<>]*?)(<\/([\w]*?)>)/g, '$1$4'));
+      }
+    } else if (mySel.value === 'delTxtNodesBoth') {
+      myEditor[myI].setValue(myEditor[myI].getValue().replace(/(<([\w]*?)\b[^>]*>)([^<>][\S\s][^<>]*?)(<\/([\w]*?)>)/g, '$1$4'));
+    } else if (mySel.value === 'get_HTML_SourceCode') {
+      var tmpTxtContent = myEditor[myI].getValue();
+      var startHTMLSrc = tmpTxtContent.indexOf('<!-- Begin: HTML Head area -->');
+      var endHTMLSrc = tmpTxtContent.indexOf('<!-- End: HTML Head area -->');
+      var txtHTMLSrc = tmpTxtContent.substring(startHTMLSrc, endHTMLSrc);
+      myEditor[myI].setValue(txtHTMLSrc);
+    } else {
+      // ignore
+    }
+  }
+  mySel.options[0].selected = true;
+}
+
+/* ======================= */
+/* autocomplete(editor, getHints, options) */
+/* clearBookmarks(editor) */
+/* clearSearch(editor) */
+/* defaultTab(editor) */
+/* delCharAfter(editor) */
+/* delCharBefore(editor) */
+/* delGroupAfter(editor) */
+/* delGroupBefore(editor) */
+/* delLineLeft(editor) */
+/* delLineRight(editor) */
+/* delWordAfter(editor) */
+/* delWordBefore(editor) */
+/* delWrappedLineLeft(editor) */
+/* delWrappedLineRight(editor) */
+/* deleteLine(editor) */
+/* deleteToSublimeMark(editor) */
+/* downcaseAtCursor(editor) */
+/* duplicateLine(editor) */
+/* find(editor) */
+/* findAllUnder(editor) */
+/* findNext(editor, rev) */
+/* findPrev(editor) */
+/* findUnder(editor) */
+/* findUnderPrevious(editor) */
+/* fold(editor) */
+/* foldAll(editor) */
+/* goCharLeft(editor) */
+/* goCharRight(editor) */
+/* goColumnLeft(editor) */
+/* goColumnRight(editor) */
+/* goDocEnd(editor) */
+/* goDocStart(editor) */
+/* goGroupLeft(editor) */
+/* goGroupRight(editor) */
+/* goLineDown(editor) */
+/* goLineEnd(editor) */
+/* goLineLeft(editor) */
+/* goLineLeftSmart(editor) */
+/* goLineRight(editor) */
+/* goLineStart(editor) */
+/* goLineStartSmart(editor) */
+/* goLineUp(editor) */
+/* goNextDiff(editor) */
+/* goPageDown(editor) */
+/* goPageUp(editor) */
+/* goPrevDiff(editor) */
+/* goSubwordLeft(editor) */
+/* goSubwordRight(editor) */
+/* goToBracket(editor) */
+/* goWordLeft(editor) */
+/* goWordRight(editor) */
+/* indentAuto(editor) */
+/* indentLess(editor) */
+/* indentMore(editor) */
+/* insertLineAfter(editor) */
+/* insertLineBefore(editor) */
+/* insertSoftTab(editor) */
+/* insertTab(editor) */
+/* joinLines(editor) */
+/* killLine(editor) */
+/* newlineAndIndent(editor) */
+/* nextBookmark(editor) */
+/* prevBookmark(editor) */
+/* redo(editor) */
+/* redoSelection(editor) */
+/* replace(editor, all) */
+/* replaceAll(editor) */
+/* scrollLineDown(editor) */
+/* scrollLineUp(editor) */
+/* selectAll(editor) */
+/* selectBetweenBrackets(editor) */
+/* selectBookmarks(editor) */
+/* selectLine(editor) */
+/* selectLinesDownward(editor) */
+/* selectLinesUpward(editor) */
+/* selectNextOccurrence(editor) */
+/* selectScope(editor) */
+/* selectToSublimeMark(editor) */
+/* setSublimeMark(editor) */
+/* showInCenter(editor) */
+/* singleSelection(editor) */
+/* singleSelectionTop(editor) */
+/* smartBackspace(editor) */
+/* sortLines(editor) */
+/* sortLinesInsensitive(editor) */
+/* splitSelectionByLine(editor) */
+/* sublimeYank(editor) */
+/* swapLineDown(editor) */
+/* swapLineUp(editor) */
+/* swapWithSublimeMark(editor) */
+/* toMatchingTag(editor) */
+/* toggleBookmark(editor) */
+/* toggleComment(editor) */
+/* toggleFold(editor) */
+/* toggleOverwrite(editor) */
+/* transposeChars(editor) */
+/* undo(editor) */
+/* undoSelection(editor) */
+/* unfold(editor) */
+/* unfoldAll(editor) */
+/* upcaseAtCursor(editor) */
+/* wrapLines(editor) */
+
+function commandEditor(myEditorName, myCommand, myP1, myP2) {
+  if ((!(myEditorName)) || (typeof myEditorName !== 'string')) return false;
+  myEditorName = myEditorName.toLowerCase();
+  if (myEditorName === 'css') {
+    CodeMirror.commands[myCommand](editor2, myP1, myP2);
+  } else if (myEditorName === 'js') {
+    CodeMirror.commands[myCommand](editor3, myP1, myP2);
+  } else if (myEditorName === 'json') {
+    CodeMirror.commands[myCommand](editor4, myP1, myP2);
+  } else if (myEditorName === 'mergeleft') {
+    CodeMirror.commands[myCommand](dv.edit, myP1, myP2);
+  } else if (myEditorName === 'mergeright') {
+    CodeMirror.commands[myCommand](dv.rightOriginal(), myP1, myP2);
+  } else if (myEditorName === 'html') {
+    CodeMirror.commands[myCommand](editor1, myP1, myP2);
+  }
+}
+
+function optionEditor(myEditorName, myOpt, myP1, myP2, myP3, myP4, myP5) {
+  if ((!(myEditorName)) || (typeof myEditorName !== 'string')) return false;
+  if ((!(myOpt)) || (typeof myOpt !== 'string')) return false;
+  myEditorName = myEditorName.toLowerCase();
+  if (myEditorName === 'css') {
+    editor2.setOption(myOpt, myP1, myP2, myP3, myP4, myP5);
+  } else if (myEditorName === 'js') {
+    editor3.setOption(myOpt, myP1, myP2, myP3, myP4, myP5);
+  } else if (myEditorName === 'json') {
+    editor4.setOption(myOpt, myP1, myP2, myP3, myP4, myP5);
+  } else if (myEditorName === 'mergeleft') {
+    dv.edit.setOption(myOpt, myP1, myP2, myP3, myP4, myP5);
+  } else if (myEditorName === 'mergeright') {
+    dv.rightOriginal().setOption(myOpt, myP1, myP2, myP3, myP4, myP5);
+  } else if (myEditorName === 'html') {
+    editor1.setOption(myOpt, myP1, myP2, myP3, myP4, myP5);
+  }
+}
+
+function miniEditor(myEditor) {
+  myEditor.setValue(miniText(myEditor.getValue()));
+}
+function miniText(myTxt) {
+  myTxt = myTxt.replace(/(\r\n)/g, '\n');
+  myTxt = myTxt.replace(/\r/g, '\n');
+  myTxt = myTxt.replace(/[\f\t\v]/g, ' ');
+  myTxt = myTxt.replace(/ {2,}/g, ' ');
+  myTxt = myTxt.replace(/( \n){2,}/g, '\n');
+  myTxt = myTxt.replace(/\n{2,}/g, '\n');
+  return myTxt;
+  /* ?\a ⇒ 7 ; control-g, C-g */
+  /* ?\b ⇒ 8 ; backspace, BS, C-h */
+  /* ?\t ⇒ 9 ; tab, TAB, C-i */
+  /* ?\n ⇒ 10 ; newline, C-j */
+  /* ?\v ⇒ 11 ; vertical tab, C-k */
+  /* ?\f ⇒ 12 ; formfeed character, C-l */
+  /* ?\r ⇒ 13 ; carriage return, RET, C-m */
+  /* ?\e ⇒ 27 ; escape character, ESC, C-[ */
+  /* ?\s ⇒ 32 ; space character, SPC */
+  /* ?\\ ⇒ 92 ; backslash character, \ */
+  /* ?\d ⇒ 127 ; delete character, DEL */
+}
+
+function refreshEditor(myEditorName) {
+  if ((!(myEditorName)) || (typeof myEditorName !== 'string')) return false;
+  myEditorName = myEditorName.toLowerCase();
+  if (myEditorName === 'css') {
+    editor2.refresh();
+  } else if (myEditorName === 'js') {
+    editor3.refresh();
+  } else if (myEditorName === 'json') {
+    editor4.refresh();
+  } else if (myEditorName === 'mergeleft') {
+    dv.edit.refresh();
+  } else if (myEditorName === 'mergeright') {
+    dv.rightOriginal().refresh();
+  } else if (myEditorName === 'html') {
+    editor1.refresh();
+  }
+}
+
+function selectAllEditor(myEditorName) {
+  if ((!(myEditorName)) || (typeof myEditorName !== 'string')) return false;
+  myEditorName = myEditorName.toLowerCase();
+  if (myEditorName === 'css') {
+    CodeMirror.commands["selectAll"](editor2);
+  } else if (myEditorName === 'js') {
+    CodeMirror.commands["selectAll"](editor3);
+  } else if (myEditorName === 'json') {
+    CodeMirror.commands["selectAll"](editor4);
+  } else if (myEditorName === 'mergeleft') {
+    CodeMirror.commands["selectAll"](dv.edit);
+  } else if (myEditorName === 'mergeright') {
+    CodeMirror.commands["selectAll"](dv.rightOriginal());
+  } else if (myEditorName === 'html') {
+    CodeMirror.commands["selectAll"](editor1);
+  }
+}
+
+function formatSelection(myEditorName) {
+  if ((!(myEditorName)) || (typeof myEditorName !== 'string')) return false;
+  myEditorName = myEditorName.toLowerCase();
+  if (myEditorName === 'css') {
+    autoFormatSelection(editor2);
+  } else if (myEditorName === 'js') {
+    autoFormatSelection(editor3);
+  } else if (myEditorName === 'json') {
+    autoFormatSelection(editor4);
+  } else if (myEditorName === 'mergeleft') {
+    autoFormatSelection(dv.edit);
+  } else if (myEditorName === 'mergeright') {
+    autoFormatSelection(dv.rightOriginal());
+  } else if (myEditorName === 'html') {
+    autoFormatSelection(editor1);
+  }
+}
+
+function formatAll(myEditorName) {
+  if ((!(myEditorName)) || (typeof myEditorName !== 'string')) return false;
+  myEditorName = myEditorName.toLowerCase();
+  if (myEditorName === 'css') {
+    autoFormatAll(editor2);
+  } else if (myEditorName === 'js') {
+    autoFormatAll(editor3);
+  } else if (myEditorName === 'json') {
+    autoFormatAll(editor4);
+  } else if (myEditorName === 'mergeleft') {
+    autoFormatAll(dv.edit);
+  } else if (myEditorName === 'mergeright') {
+    autoFormatAll(dv.rightOriginal());
+  } else if (myEditorName === 'html') {
+    autoFormatAll(editor1);
+  }
+}
+</script>
+
+</article>
+</body>
+</html>
