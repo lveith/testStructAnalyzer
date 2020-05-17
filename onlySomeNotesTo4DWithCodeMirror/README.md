@@ -31,3 +31,84 @@ CodeMirror is a versatile text editor implemented in JavaScript for the browser.
 It is specialized for editing code, and comes with a number of language modes and addons that implement more advanced editing functionality.
 A rich programming API and a CSS theming system are available for customizing CodeMirror
 to fit your application, and extending it with new functionality.
+
+
+### Shortcuts to Search
+
+Ctrl-F / Cmd-F
+Start searching
+
+Ctrl-G / Cmd-G
+Find next
+
+Shift-Ctrl-G / Shift-Cmd-G
+Find previous
+
+Shift-Ctrl-F / Cmd-Option-F
+Replace
+
+Shift-Ctrl-R / Shift-Cmd-Option-F
+Replace all
+
+Alt-F
+Persistent search (dialog doesn't autoclose, enter to find next, Shift-Enter to find previous)
+
+Alt-G
+Jump to line
+
+
+### Other Shortcuts (just a subset of all possible keys, means this is not all)
+
+Alt-Left: goSubwordLeft
+Alt-Right: goSubwordRight
+Cmd-Up: scrollLineUp
+Cmd-Down: scrollLineDown
+Shift-Cmd-L: splitSelectionByLine
+Alt-Tab: indentLess
+Shift-Tab: indent (needs correct language mode with block detect)
+Esc: singleSelectionTop
+Cmd-L: selectLine
+Shift-Cmd-K: deleteLine
+Cmd-Enter: insertLineAfter
+Shift-Cmd-Enter: insertLineBefore
+Cmd-D: selectNextOccurrence
+Shift-Cmd-Space: selectScope
+Shift-Cmd-M: selectBetweenBrackets
+Cmd-M: goToBracket
+Cmd-Ctrl-Up: swapLineUp
+Cmd-Ctrl-Down: swapLineDown
+Cmd-/: toggleComment
+Cmd-J: joinLines
+Ctrl-J: jumpToMatchingTag
+Shift-Cmd-D: duplicateLine
+Cmd-T: transposeChars
+F9: sortLines
+Cmd-F9: sortLinesInsensitive
+F2: nextBookmark
+Shift-F2: prevBookmark
+Cmd-F2: toggleBookmark
+Shift-Cmd-F2: clearBookmarks
+Alt-F2: selectBookmarks
+Alt-Q: wrapLines
+Cmd-K Cmd-Backspace: delLineLeft
+Backspace: smartBackspace
+Cmd-K Cmd-K: delLineRight
+Cmd-K Cmd-U: upcaseAtCursor
+Cmd-K Cmd-L: downcaseAtCursor
+Cmd-K Cmd-Space: setSublimeMark
+Cmd-K Cmd-A: selectToSublimeMark
+Cmd-K Cmd-W: deleteToSublimeMark
+Cmd-K Cmd-X: swapWithSublimeMark
+Cmd-K Cmd-Y: sublimeYank
+Cmd-K Cmd-G: clearBookmarks
+Cmd-K Cmd-C: showInCenter
+Shift-Alt-Up: selectLinesUpward
+Shift-Alt-Down: selectLinesDownward
+Cmd-F3: findUnder
+Shift-Cmd-F3: findUnderPrevious
+Ctrl-Q: fold
+Shift-Cmd-[: fold
+Shift-Cmd-]: unfold
+Cmd-K Cmd-j: unfoldAll
+Cmd-K Cmd-0: unfoldAll
+Cmd-H: replace
