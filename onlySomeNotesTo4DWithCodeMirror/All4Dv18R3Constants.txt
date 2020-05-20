@@ -1,0 +1,2413 @@
+_o_4D Draw license
+_o_4D First
+_o_4D for ADO license
+_o_4D for MySQL license
+_o_4D for PostgreSQL license
+_o_4D for Sybase license
+_o_4D Interpreted desktop
+_o_4D Local mode scheduler
+_o_4D Mobile license
+_o_4D Remote mode scheduler
+_o_4D Server scheduler
+_o_Accept action
+_o_Add subrecord action
+_o_Ala Macintosh
+_o_Ala Windows
+_o_American dictionary
+_o_Automatic platform
+_o_Cache writing mode
+_o_Cancel action
+_o_Clear action
+_o_Client IP address to listen
+_o_Client max Web requests size
+_o_Client maximum Web process
+_o_Client minimum Web process
+_o_Compositing mode
+_o_Compositing mode form window
+_o_Condensed
+_o_Copy action
+_o_Cut action
+_o_Database cache size
+_o_Database settings action
+_o_Delete record action
+_o_Delete subrecord action
+_o_Direct2D hardware SVG and editors
+_o_Direct2D mixed
+_o_Direct2D software SVG and editors
+_o_Edit subrecord action
+_o_English dictionary
+_o_Extended
+_o_Extras folder
+_o_First page action
+_o_First record action
+_o_Form Has toolbar button Mac
+_o_French dictionary
+_o_Full Version
+_o_German dictionary
+_o_Has toolbar button Mac
+_o_Hidden modal dialog
+_o_In contents
+_o_In drag
+_o_In go away
+_o_In grow
+_o_In menu bar
+_o_In system window
+_o_In zoom box
+_o_Index compacting
+_o_INTEL 386
+_o_INTEL 486
+_o_Invert objects
+_o_IP address to listen
+_o_Is float
+_o_Last page action
+_o_Last record action
+_o_lk display hor scrollbar
+_o_lk display ver scrollbar
+_o_lk footer height
+_o_lk header height
+_o_lk hor scrollbar position
+_o_lk ver scrollbar position
+_o_Mac control panels
+_o_Mac extensions
+_o_Mac OS 7
+_o_Mac OS 9
+_o_Mac shutdown items_all
+_o_Mac shutdown items_user
+_o_Mac theme
+_o_Macintosh 68K
+_o_Macintosh node
+_o_Maximum temporary memory size
+_o_Maximum Web process
+_o_Minimum Web process
+_o_MSC Action
+_o_Next page action
+_o_Next record action
+_o_No action
+_o_NonInverted objects
+_o_Norwegian dictionary
+_o_Object Accept action
+_o_Object Add subrecord action
+_o_Object Automatic splitter action
+_o_Object Cancel action
+_o_Object Clear action
+_o_Object Copy action
+_o_Object Cut action
+_o_Object Database Settings action
+_o_Object Delete record action
+_o_Object Delete subrecord action
+_o_Object Edit subrecord action
+_o_Object First page action
+_o_Object First record action
+_o_Object Goto page action
+_o_Object Last page action
+_o_Object Last record action
+_o_Object MSC action
+_o_Object Next page action
+_o_Object Next record action
+_o_Object No standard action
+_o_Object Open back URL action
+_o_Object Open next URL action
+_o_Object Paste action
+_o_Object Previous page action
+_o_Object Previous record action
+_o_Object Quit action
+_o_Object Redo action
+_o_Object Refresh current URL action
+_o_Object Return to Design mode action
+_o_Object Select all action
+_o_Object Show Clipboard action
+_o_Object Stop loading URL action
+_o_Object Test Application action
+_o_Object Undo action
+_o_On Loading Record Event
+_o_On Mac Toolbar Button
+_o_Outline
+_o_Paste action
+_o_PowerPC 601
+_o_PowerPC 603
+_o_PowerPC 604
+_o_PowerPC G3
+_o_Previous page action
+_o_Previous record action
+_o_QT animation compressor
+_o_QT compact video compressor
+_o_QT graphics compressor
+_o_QT photo compressor
+_o_QT raw compressor
+_o_QT video compressor
+_o_QuickTime support
+_o_Quit action
+_o_Real display precision
+_o_Redo action
+_o_Return to design mode
+_o_Select all action
+_o_Seq access optimization
+_o_Seq distinct values ratio
+_o_Seq order ratio
+_o_Seq query select ratio
+_o_Shadow
+_o_Show clipboard action
+_o_Spanish dictionary
+_o_Temporary memory size
+_o_Test application action
+_o_Undo action
+_o_Use PICT resource
+_o_Web conversion mode
+_o_Web Log recording
+_o_Web process with context
+_o_WEDD signature
+_o_Windows 3_11, NT 3_51
+_o_Windows 9x
+_o_Windows node
+4D Client database folder
+4D Client SOAP license
+4D Client Web license
+4D Desktop
+4D digest
+4D for OCI license
+4D Local mode
+4D ODBC Pro license
+4D Remote mode
+4D Remote mode timeout
+4D REST Test license
+4D Server
+4D Server log recording
+4D Server timeout
+4D SOAP license
+4D SOAP local license
+4D SOAP one connection license
+4D SQL Server license
+4D SQL Server local license
+4D SQL Server one Conn license
+4D user account
+4D user alias
+4D user alias or account
+4D View license
+4D Volume desktop
+4D Web license
+4D Web local license
+4D Web one connection license
+4D Write license
+64 bit version
+Aborted
+Absolute path
+Access privileges
+ACK ASCII code
+Activate event
+Activate window bit
+Activate window mask
+Active 4D Folder
+Activity all
+Activity language
+Activity network
+Activity operations
+Additional text
+ak accept
+ak add subrecord
+ak automatic splitter
+ak background color
+ak background color dialog
+ak cancel
+ak clear
+ak compute expressions
+ak copy
+ak current form
+ak cut
+ak database settings
+ak delete record
+ak delete subrecord
+ak display subrecord
+ak edit subrecord
+ak first page
+ak first record
+ak font bold
+ak font color
+ak font color dialog
+ak font italic
+ak font linethrough
+ak font show dialog
+ak font size
+ak font style
+ak font underline
+ak freeze expressions
+ak goto page
+ak last page
+ak last record
+ak main form
+ak msc
+ak next page
+ak next record
+ak none
+ak open back url
+ak open forward url
+ak paste
+ak previous page
+ak previous record
+ak quit
+ak redo
+ak refresh current url
+ak return to design mode
+ak select all
+ak show clipboard
+ak show reference
+ak spell
+ak standard action title
+ak stop loading url
+ak undo
+Alias selection
+Align bottom
+Align center
+Align default
+Align left
+Align right
+Align top
+Allow deletion
+Alternate dialog box
+Apple event manager
+Applications or program files
+April
+Array 2D
+Associated standard action
+Associated standard action
+Asynchronous progress bar
+At sign
+At the bottom
+At the top
+Attribute background color
+Attribute bold style
+Attribute executed on server
+Attribute folder name
+Attribute font name
+Attribute invisible
+Attribute italic style
+Attribute published SOAP
+Attribute published SQL
+Attribute published Web
+Attribute published WSDL
+Attribute shared
+Attribute strikethrough style
+Attribute text color
+Attribute text size
+Attribute underline style
+August
+Austrian Schilling
+Auto insertion
+Auto key event
+Auto repair mode
+Auto synchro resources folder
+Automatic
+Automatic style sheet
+Automatic style sheet_additional
+Automatic style sheet_main
+Background color
+Background color none
+Backspace
+Backspace key
+Backup history file
+Backup log file
+Backup process
+Backup settings file
+Backup settings file for data
+Barber shop
+BEL ASCII code
+Belgian Franc
+Black
+Black and white
+Blank if null date
+Blank if null time
+Blob array
+Blue
+Bold
+Bold and Italic
+Bold and Underline
+Boolean array
+Border Dotted
+Border Double
+Border None
+Border Plain
+Border Raised
+Border Sunken
+Border System
+Brown
+BS ASCII code
+Build application log file
+Build application settings file
+Cache flush periodicity
+Cache manager
+Cache priority high
+Cache priority low
+Cache priority normal
+Cache priority very high
+Cache priority very low
+Cache unload minimum size
+CAN ASCII code
+Caps lock key bit
+Caps lock key mask
+Carriage return
+Changed resource bit
+Changed resource mask
+Character set
+Choice list
+Circular log limitation
+ck ascending
+ck descending
+ck diacritical
+ck disable wildchar
+ck ignore null or empty
+ck keep empty strings
+ck keep null
+ck resolve pointers
+ck shared
+Client character set
+Client HTTPS port ID
+Client log recording
+Client manager process
+Client max concurrent Web proc
+Client port ID
+Client Server port ID
+Client Web log recording
+Cluster BTree index
+Code with tokens
+Color option
+Command key bit
+Command key mask
+Compact address table
+Compact compression mode
+Compacting log file
+Compiler process
+Control key bit
+Control key mask
+Controller form window
+Copy XML data source
+CR ASCII code
+Create process
+Created from execution dialog
+Created from menu command
+Crop
+Currency symbol
+Current backup settings file
+Current localization
+Current process debug log recording
+Current resources folder
+Dark blue
+Dark brown
+Dark green
+Dark grey
+Dark shadow color
+Data bits 5
+Data bits 6
+Data bits 7
+Data bits 8
+Data folder
+Database folder
+Database folder UNIX syntax
+Date array
+Date RFC 1123
+Date separator
+Date type
+Dates inside objects
+DB4D Cron
+DB4D Flush cache
+DB4D Garbage collector
+DB4D Index builder
+DB4D Listener
+DB4D Mirror
+DB4D Worker pool user
+DC1 ASCII code
+DC2 ASCII code
+DC3 ASCII code
+DC4 ASCII code
+Debug log file
+Debug log recording
+December
+Decimal separator
+Default index type
+Default localization
+Degree
+DEL ASCII code
+Delayed
+Delete only if empty
+Delete with contents
+Demo version
+Description in text format
+Description in XML format
+Design process
+Desktop
+Destination option
+Deutsche Mark
+Diagnostic log file
+Diagnostic log recording
+Direct2D disabled
+Direct2D get active status
+Direct2D hardware
+Direct2D software
+Direct2D status
+Directory file
+Disable events others unchanged
+Disable highlight item color
+Disk event
+dk ascending
+dk auto merge
+dk can be stopped by user
+dk descending
+dk diacritical
+dk distinct values
+dk force drop if stamp changed
+dk keep ordered
+dk key as string
+dk no ranges
+dk non ordered
+dk reload if stamp changed
+dk silent mode
+dk status automerge failed
+dk status entity does not exist anymore
+dk status locked
+dk status serious error
+dk status stamp has changed
+dk status success
+dk status wrong permission
+dk stop dropping on first error
+dk with primary key
+dk with stamp
+DLE ASCII code
+Do not compact index
+Do not create log file
+Do not modify
+DOCTYPE Name
+Document unchanged
+Document URI
+Document with CR
+Document with CRLF
+Document with LF
+Document with native format
+Documents folder
+Does not exist
+Double quote
+Double sided option
+Down arrow key
+e number
+EM ASCII code
+Enable events disable others
+Enable events others unchanged
+Encoding
+End key
+ENQ ASCII code
+Enter
+Enter key
+EOT ASCII code
+Error message
+ESC ASCII code
+Escape
+Escape key
+ETB ASCII code
+ETX ASCII code
+Euro
+Event manager
+Excluded list
+Execute on client process
+Execute on server process
+Executing
+EXIF action
+EXIF Adobe RGB
+EXIF aperture priority AE
+EXIF aperture value
+EXIF auto
+EXIF auto bracket
+EXIF auto mode
+EXIF average
+EXIF B
+EXIF brightness value
+EXIF Cb
+EXIF center weighted average
+EXIF close
+EXIF cloudy
+EXIF color sequential area
+EXIF color sequential linear
+EXIF color space
+EXIF components configuration
+EXIF compressed bits per pixel
+EXIF compulsory flash firing
+EXIF compulsory flash suppression
+EXIF contrast
+EXIF cool white fluorescent
+EXIF Cr
+EXIF creative
+EXIF custom
+EXIF custom rendered
+EXIF D50
+EXIF D55
+EXIF D65
+EXIF D75
+EXIF date time digitized
+EXIF date time original
+EXIF day white fluorescent
+EXIF daylight
+EXIF Daylight fluorescent
+EXIF detected
+EXIF digital camera
+EXIF digital zoom ratio
+EXIF distant
+EXIF EXIF version
+EXIF exposure bias value
+EXIF exposure index
+EXIF exposure mode
+EXIF exposure portrait
+EXIF exposure program
+EXIF exposure time
+EXIF F number
+EXIF file source
+EXIF film scanner
+EXIF fine weather
+EXIF flash
+EXIF flash energy
+EXIF Flash fired
+EXIF flash function present
+EXIF flash mode
+EXIF flash pix version
+EXIF flash red eye reduction
+EXIF flash return light
+EXIF flashlight
+EXIF focal length
+EXIF focal lens in 35 mm film
+EXIF focal plane resolution unit
+EXIF focal plane X resolution
+EXIF focal plane Y resolution
+EXIF G
+EXIF gain control
+EXIF gamma
+EXIF high
+EXIF high gain down
+EXIF high gain up
+EXIF image unique ID
+EXIF ISO speed ratings
+EXIF ISOStudio tungsten
+EXIF landscape
+EXIF light fluorescent
+EXIF light source
+EXIF low
+EXIF low gain down
+EXIF low gain up
+EXIF macro
+EXIF maker note
+EXIF manual
+EXIF max aperture value
+EXIF metering mode
+EXIF multi segment
+EXIF multi spot
+EXIF night
+EXIF no detection function
+EXIF none
+EXIF normal
+EXIF not defined
+EXIF not detected
+EXIF one chip color area
+EXIF other
+EXIF partial
+EXIF pixel X dimension
+EXIF pixel Y dimension
+EXIF program AE
+EXIF R
+EXIF reflection print scanner
+EXIF related sound file
+EXIF reserved
+EXIF s RGB
+EXIF saturation
+EXIF scene capture type
+EXIF scene landscape
+EXIF scene portrait
+EXIF scene type
+EXIF sensing method
+EXIF shade
+EXIF sharpness
+EXIF shutter speed priority AE
+EXIF shutter speed value
+EXIF spectral sensitivity
+EXIF spot
+EXIF standard
+EXIF standard light A
+EXIF standard light B
+EXIF standard light C
+EXIF subject area
+EXIF subject dist range
+EXIF subject distance
+EXIF subject location
+EXIF three chip color area
+EXIF trilinear
+EXIF tungsten
+EXIF two chip color area
+EXIF uncalibrated
+EXIF unknown
+EXIF unused
+EXIF user comment
+EXIF white balance
+EXIF white fluorescent
+EXIF Y
+Extended real format
+External task
+External window
+F1 key
+F10 key
+F11 key
+F12 key
+F13 key
+F14 key
+F15 key
+F2 key
+F3 key
+F4 key
+F5 key
+F6 key
+F7 key
+F8 key
+F9 key
+Fade to grey scale
+Fast compression mode
+Favorite fonts
+Favorites Win
+February
+FF ASCII code
+Field attribute with name
+Field attribute with number
+File name entry
+Finnish Markka
+fk alias link
+fk applications folder
+fk data folder
+fk database folder
+fk desktop folder
+fk documents folder
+fk ignore invisible
+fk licenses folder
+fk logs folder
+fk mobileApps folder
+fk overwrite
+fk platform path
+fk posix path
+fk recursive
+fk remote database folder
+fk resources folder
+fk symbolic link
+fk system folder
+fk user preferences folder
+fk web root folder
+Flip horizontally
+Flip vertically
+Floating window
+Folder separator
+Fonts
+Foreground color
+Form all pages
+Form break0
+Form break1
+Form break2
+Form break3
+Form break4
+Form break5
+Form break6
+Form break7
+Form break8
+Form break9
+Form current page
+Form detail
+Form footer
+Form has full screen mode Mac
+Form has no menu bar
+Form header
+Form header1
+Form header10
+Form header2
+Form header3
+Form header4
+Form header5
+Form header6
+Form header7
+Form header8
+Form header9
+Form inherited
+Formula in with virtual structure
+Formula out with tokens
+Formula out with virtual structure
+Four colors
+French Franc
+Friday
+FS ASCII code
+Full method text
+Generic PDF driver
+Get pathname
+Get XML data source
+GPS 2D
+GPS 3D
+GPS above sea level
+GPS altitude
+GPS altitude ref
+GPS area information
+GPS below sea level
+GPS correction applied
+GPS correction not applied
+GPS date time
+GPS dest bearing
+GPS dest bearing ref
+GPS dest distance
+GPS dest distance ref
+GPS dest latitude
+GPS dest latitude deg
+GPS dest latitude dir
+GPS dest latitude min
+GPS dest latitude sec
+GPS dest longitude
+GPS dest longitude deg
+GPS dest longitude dir
+GPS dest longitude min
+GPS dest longitude sec
+GPS differential
+GPS DOP
+GPS east
+GPS img direction
+GPS img direction ref
+GPS km h
+GPS knots h
+GPS latitude
+GPS latitude deg
+GPS latitude dir
+GPS latitude min
+GPS latitude sec
+GPS longitude
+GPS longitude deg
+GPS longitude dir
+GPS longitude min
+GPS longitude sec
+GPS magnetic north
+GPS map datum
+GPS measure mode
+GPS measurement in progress
+GPS measurement Interoperability
+GPS niles h
+GPS north
+GPS processing method
+GPS satellites
+GPS south
+GPS speed
+GPS speed ref
+GPS status
+GPS track
+GPS track ref
+GPS true north
+GPS version ID
+GPS west
+Graph background color
+Graph background opacity
+Graph background shadow color
+Graph bottom margin
+Graph colors
+Graph column gap
+Graph column width max
+Graph column width min
+Graph default height
+Graph default width
+Graph display legend
+Graph document background color
+Graph document background opacity
+Graph font color
+Graph font size
+Graph left margin
+Graph legend font color
+Graph legend icon gap
+Graph legend icon height
+Graph legend icon width
+Graph legend labels
+Graph line width
+Graph pie direction
+Graph pie font size
+Graph pie shift
+Graph pie start angle
+Graph plot height
+Graph plot radius
+Graph plot width
+Graph right margin
+Graph top margin
+Graph type
+Graph xGrid
+Graph xMax
+Graph xMin
+Graph xProp
+Graph yGrid
+Graph yMax
+Graph yMin
+Greek Drachma
+Green
+Grey
+GS ASCII code
+GZIP best compression mode
+GZIP fast compression mode
+Has full screen mode Mac
+Has grow box
+Has highlight
+Has window title
+Has zoom box
+Help key
+HH MM
+HH MM AM PM
+HH MM SS
+Hide printing progress option
+Highlight menu background color
+Highlight menu text color
+Highlight text background color
+Highlight text color
+Highlighted method text
+Home key
+Horizontal concatenation
+Horizontally centered
+Hour min
+Hour min sec
+HT ASCII code
+HTML Root folder
+HTTP basic
+HTTP compression
+HTTP compression level
+HTTP compression threshold
+HTTP debug log file
+HTTP DELETE method
+HTTP digest
+HTTP display auth dial
+HTTP follow redirect
+HTTP GET method
+HTTP HEAD method
+HTTP Listener
+HTTP log file
+HTTP Log Flusher
+HTTP max redirect
+HTTP OPTIONS method
+HTTP POST method
+HTTP PUT method
+HTTP reset auth settings
+HTTP timeout
+HTTP TRACE method
+HTTP Worker pool server
+HTTPS port ID
+Idle connections timeout
+Ignore invisible
+IMAP authentication CRAM MD5
+IMAP authentication login
+IMAP authentication plain
+Indexing process
+Information message
+Integer array
+Intel compatible
+Internal 4D localization
+Internal 4D server process
+Internal date abbreviated
+Internal date long
+Internal date short
+Internal date short special
+Internal timer process
+Into 4D commands log
+Into 4D debug message
+Into 4D diagnostic log
+Into 4D request log
+Into current selection
+Into named selection
+Into set
+Into system standard outputs
+Into variable
+Into Windows log events
+IPTC action
+IPTC aerial view
+IPTC byline
+IPTC byline title
+IPTC caption abstract
+IPTC category
+IPTC city
+IPTC close up
+IPTC contact
+IPTC content location code
+IPTC content location name
+IPTC copyright notice
+IPTC country primary location code
+IPTC country primary location name
+IPTC couple
+IPTC credit
+IPTC date time created
+IPTC digital creation date time
+IPTC edit status
+IPTC expiration date time
+IPTC exterior view
+IPTC fixture identifier
+IPTC full length
+IPTC general view
+IPTC group
+IPTC half length
+IPTC headline
+IPTC headshot
+IPTC image orientation
+IPTC image type
+IPTC interior view
+IPTC keywords
+IPTC language identifier
+IPTC movie scene
+IPTC night scene
+IPTC object attribute reference
+IPTC object cycle
+IPTC object name
+IPTC off beat
+IPTC original transmission reference
+IPTC originating program
+IPTC panoramic view
+IPTC performing
+IPTC posing
+IPTC profile
+IPTC program version
+IPTC province state
+IPTC rear view
+IPTC release date time
+IPTC satellite
+IPTC scene
+IPTC single
+IPTC source
+IPTC special instructions
+IPTC star rating
+IPTC sub location
+IPTC subject reference
+IPTC supplemental category
+IPTC symbolic
+IPTC two
+IPTC under water
+IPTC urgency
+IPTC writer editor
+Irish Pound
+Is a document
+Is a folder
+Is alpha field
+Is BLOB
+Is boolean
+Is collection
+Is color
+Is current database a project
+Is date
+Is DOM reference
+Is gray scale
+Is host database a project
+Is integer
+Is integer 64 bits
+Is longint
+Is not compressed
+Is null
+Is object
+Is picture
+Is pointer
+Is real
+Is string var
+Is subtable
+Is text
+Is time
+Is undefined
+Is variant
+Is XML
+ISO date
+ISO date GMT
+ISO L1 a acute
+ISO L1 a circumflex
+ISO L1 a grave
+ISO L1 a ring
+ISO L1 a tilde
+ISO L1 a umlaut
+ISO L1 ae ligature
+ISO L1 Ampersand
+ISO L1 c cedilla
+ISO L1 Cap A acute
+ISO L1 Cap A circumflex
+ISO L1 Cap A grave
+ISO L1 Cap A ring
+ISO L1 Cap A tilde
+ISO L1 Cap A umlaut
+ISO L1 Cap AE ligature
+ISO L1 Cap C cedilla
+ISO L1 Cap E acute
+ISO L1 Cap E circumflex
+ISO L1 Cap E grave
+ISO L1 Cap E umlaut
+ISO L1 Cap Eth Icelandic
+ISO L1 Cap I acute
+ISO L1 Cap I circumflex
+ISO L1 Cap I grave
+ISO L1 Cap I umlaut
+ISO L1 Cap N tilde
+ISO L1 Cap O acute
+ISO L1 Cap O circumflex
+ISO L1 Cap O grave
+ISO L1 Cap O slash
+ISO L1 Cap O tilde
+ISO L1 Cap O umlaut
+ISO L1 Cap THORN Icelandic
+ISO L1 Cap U acute
+ISO L1 Cap U circumflex
+ISO L1 Cap U grave
+ISO L1 Cap U umlaut
+ISO L1 Cap Y acute
+ISO L1 Copyright
+ISO L1 e acute
+ISO L1 e circumflex
+ISO L1 e grave
+ISO L1 e umlaut
+ISO L1 eth Icelandic
+ISO L1 Greater than
+ISO L1 i acute
+ISO L1 i circumflex
+ISO L1 i grave
+ISO L1 i umlaut
+ISO L1 Less than
+ISO L1 n tilde
+ISO L1 o acute
+ISO L1 o circumflex
+ISO L1 o grave
+ISO L1 o slash
+ISO L1 o tilde
+ISO L1 o umlaut
+ISO L1 Quotation mark
+ISO L1 Registered
+ISO L1 sharp s German
+ISO L1 thorn Icelandic
+ISO L1 u acute
+ISO L1 u circumflex
+ISO L1 u grave
+ISO L1 u umlaut
+ISO L1 y acute
+ISO L1 y umlaut
+ISO time
+Italian Lira
+Italic
+Italic and Underline
+January
+July
+June
+Key down event
+Key up event
+Keywords index
+Last backup date
+Last backup file
+Last Backup information
+Last backup status
+Last restore date
+Last restore status
+LDAP all levels
+LDAP password MD5
+LDAP password plain text
+LDAP root and next
+LDAP root only
+Left arrow key
+Legacy printing layer option
+LF ASCII code
+Libldap version
+Libsasl version
+Licenses folder
+Light blue
+Light grey
+Light shadow color
+Line feed
+lk add to selection
+lk all
+lk allow wordwrap
+lk auto row height
+lk automatic
+lk background color
+lk background color array
+lk background color expression
+lk break row
+lk column max width
+lk column min width
+lk column resizable
+lk control array
+lk detail form name
+lk display
+lk display footer
+lk display header
+lk display record
+lk display type
+lk do nothing
+lk double click on row
+lk edit record
+lk extra rows
+lk font color
+lk font color array
+lk font color expression
+lk font style expression
+lk footer average
+lk footer count
+lk footer custom
+lk footer max
+lk footer min
+lk footer std deviation
+lk footer sum
+lk footer sum squares
+lk footer variance
+lk hide
+lk hide selection highlight
+lk highlight set
+lk hor scrollbar height
+lk inherited
+lk last printed row number
+lk level
+lk lines
+lk manual
+lk meta expression
+lk multi style
+lk multiple
+lk named selection
+lk no
+lk none
+lk numeric format
+lk pixels
+lk printed height
+lk printed rows
+lk printing is over
+lk remove from selection
+lk replace selection
+lk resizing mode
+lk row height array
+lk row height unit
+lk row is disabled
+lk row is hidden
+lk row is not selectable
+lk row max height
+lk row min height
+lk selection
+lk selection mode
+lk single
+lk single click edit
+lk sortable
+lk style array
+lk three states checkbox
+lk truncate
+lk ver scrollbar width
+lk with ellipsis
+lk without ellipsis
+lk yes
+Locked resource bit
+Locked resource mask
+Log command list
+Log file process
+Logger process
+Logs folder
+LongInt array
+Luxembourg Franc
+Mac C string
+Mac OS
+Mac Pascal string
+Mac spool file format option
+Mac text with length
+Mac text without length
+Macintosh byte ordering
+Macintosh double real format
+MacOS printer port
+MacOS serial port
+mail disposition attachment
+mail disposition inline
+mail mode ISO2022JP
+mail mode ISO88591
+mail mode UTF8
+mail mode UTF8 in base64
+Main 4D process
+Main process
+Manual
+March
+Max concurrent Web processes
+Maximum Web requests size
+MAXINT
+MAXLONG
+MAXTEXTLENBEFOREV11
+May
+MD5 digest
+Merged application
+Method editor macro process
+Millions of colors 24 bit
+Millions of colors 32 bit
+Min sec
+Min TLS version
+MM SS
+MobileApps folder
+Modal dialog
+Modal dialog box
+Modal form dialog box
+Monday
+Monitor process
+Mouse button bit
+Mouse button mask
+Mouse down event
+Mouse up event
+Movable dialog box
+Movable form dialog box
+Move to replaced files folder
+MSC Process
+Multiline Auto
+Multiline No
+Multiline Yes
+Multiple files
+Multiple selection
+NAK ASCII code
+Native byte ordering
+Native real format
+NBSP ASCII CODE
+Netherlands Guilder
+New file
+New file dialog
+New record
+Next backup date
+No current record
+No relation
+No selection
+No such data in pasteboard
+None
+Normal
+November
+NUL ASCII code
+Null event
+Number of copies option
+Number of formulas in cache
+Object array
+Object current
+Object first in entry order
+Object named
+Object subform container
+Object type 3D button
+Object type 3D checkbox
+Object type 3D radio button
+Object type button grid
+Object type checkbox
+Object type combobox
+Object type dial
+Object type group
+Object type groupbox
+Object type hierarchical list
+Object type hierarchical popup menu
+Object type highlight button
+Object type invisible button
+Object type line
+Object type listbox
+Object type listbox column
+Object type listbox footer
+Object type listbox header
+Object type matrix
+Object type oval
+Object type picture button
+Object type picture input
+Object type picture popup menu
+Object type picture radio button
+Object type plugin area
+Object type popup dropdown list
+Object type progress indicator
+Object type push button
+Object type radio button
+Object type radio button field
+Object type rectangle
+Object type rounded rectangle
+Object type ruler
+Object type splitter
+Object type static picture
+Object type static text
+Object type subform
+Object type tab control
+Object type text input
+Object type unknown
+Object type view pro area
+Object type web area
+Object type write pro area
+Object with focus
+October
+On Activate
+On After Edit
+On after host database exit
+On after host database startup
+On After Keystroke
+On After Sort
+On Alternative Click
+On application background move
+On application foreground move
+On background
+On Before Data Entry
+On before host database exit
+On before host database startup
+On Before Keystroke
+On Begin Drag Over
+On Begin URL Loading
+On Bound Variable Change
+On Clicked
+On Close Box
+On Close Detail
+On Collapse
+On Column Moved
+On Column Resize
+On Data Change
+On Deactivate
+On Delete Action
+On Deleting Record Event
+On Display Detail
+On Double Clicked
+On Drag Over
+On Drop
+On End URL Loading
+On exit process
+On Expand
+On Footer Click
+On Getting Focus
+On Header
+On Header Click
+On Load
+On Load Record
+On Long Click
+On Losing Focus
+On Menu Selected
+On Mouse Enter
+On Mouse Leave
+On Mouse Move
+On Mouse Up
+On object locked abort
+On object locked confirm
+On object locked retry
+On Open Detail
+On Open External Link
+On Outside Call
+On Page Change
+On Plug in Area
+On Printing Break
+On Printing Detail
+On Printing Footer
+On Resize
+On Row Moved
+On Row Resize
+On Saving Existing Record Event
+On Saving New Record Event
+On Scroll
+On Selection Change
+On the left
+On the right
+On Timer
+On Unload
+On URL Filtering
+On URL Loading Error
+On URL Resource Loading
+On Validate
+On VP Ready
+On Window Opening Denied
+OpenSSL version
+Operating system event
+Option key bit
+Option key mask
+Orange
+Order by formula on server
+Orientation 0°
+Orientation 180°
+Orientation 90° left
+Orientation 90° right
+Orientation option
+Other 4D process
+Other internal process
+Other user process
+Own XML data source
+Package open
+Package selection
+Page down key
+Page range option
+Page setup dialog
+Page up key
+Palette form window
+Palette window
+Paper option
+Paper source option
+Parity even
+Parity none
+Parity odd
+Path all objects
+Path class
+Path database method
+Path is POSIX
+Path is system
+Path project form
+Path project method
+Path table form
+Path trigger
+Paused
+PC byte ordering
+PC double real format
+PDFCreator Printer name
+Period
+PHP interpreter IP address
+PHP interpreter port
+PHP max requests
+PHP number of children
+PHP privileges
+PHP raw result
+PHP use external interpreter
+Pi
+Picture array
+Picture data
+Picture document
+Plain
+Plain dialog box
+Plain fixed size window
+Plain form window
+Plain no zoom box window
+Plain window
+Pointer array
+Pop up form window
+Pop up window
+POP3 authentication APOP
+POP3 authentication CRAM MD5
+POP3 authentication login
+POP3 authentication plain
+POP3 authentication user
+POP3 Log
+POP3 log file
+Port ID
+Portuguese Escudo
+Posix path
+Power PC
+Preloaded resource bit
+Preloaded resource mask
+Print dialog
+Print Frame fixed with multiple records
+Print Frame fixed with truncation
+Processes only
+Progress bar
+Protected resource bit
+Protected resource mask
+Protocol DTR
+Protocol none
+Protocol XONXOFF
+PUBLIC ID
+Purgeable resource bit
+Purgeable resource mask
+Purple
+Query by formula joins
+Query by formula on server
+Quote
+Radian
+Read and write
+Read mode
+Real array
+Recent fonts
+Recursive parsing
+Red
+Regular window
+Renumber records
+Repair log file
+Replicated
+Request log file
+Required list
+Reset
+Resizable sheet window
+Resize horizontal grow
+Resize horizontal move
+Resize horizontal none
+Resize vertical grow
+Resize vertical move
+Resize vertical none
+Restore process
+Return key
+Right arrow key
+Right control key bit
+Right control key mask
+Right option key bit
+Right option key mask
+Right shift key bit
+Right shift key mask
+Round corner window
+RS ASCII code
+Saturday
+Scale
+Scale option
+Scaled to fit
+Scaled to fit prop centered
+Scaled to fit proportional
+Screen size
+Screen work area
+September
+Serial port manager
+Server base process stack size
+Server interface process
+ServerNet Listener
+ServerNet Session manager
+Sessions only
+SHA1 digest
+SHA256 digest
+SHA512 digest
+Sheet form window
+Sheet window
+Shift key bit
+Shift key mask
+Short date day position
+Short date month position
+Short date year position
+Shortcut with Backspace
+Shortcut with Carriage Return
+Shortcut with Delete
+Shortcut with Down arrow
+Shortcut with End
+Shortcut with Enter
+Shortcut with Escape
+Shortcut with F1
+Shortcut with F10
+Shortcut with F11
+Shortcut with F12
+Shortcut with F13
+Shortcut with F14
+Shortcut with F15
+Shortcut with F2
+Shortcut with F3
+Shortcut with F4
+Shortcut with F5
+Shortcut with F6
+Shortcut with F7
+Shortcut with F8
+Shortcut with F9
+Shortcut with Help
+Shortcut with Home
+Shortcut with Left arrow
+Shortcut with Page down
+Shortcut with Page up
+Shortcut with Right arrow
+Shortcut with Tabulation
+Shortcut with Up arrow
+SI ASCII code
+Single selection
+Sixteen colors
+sk diacritical
+sk ignore empty strings
+sk trim spaces
+SMTP authentication CRAM MD5
+SMTP authentication login
+SMTP authentication plain
+SMTP Log
+SMTP log file
+SO ASCII code
+SOAP client fault
+SOAP input
+SOAP method name
+SOAP output
+SOAP Process
+SOAP server fault
+SOAP service name
+SOH ASCII code
+SP ASCII code
+Space
+Spanish Peseta
+Speed 115200
+Speed 1200
+Speed 1800
+Speed 19200
+Speed 230400
+Speed 2400
+Speed 300
+Speed 3600
+Speed 4800
+Speed 57600
+Speed 600
+Speed 7200
+Speed 9600
+Spellchecker
+Spooler document name option
+SQL all records
+SQL asynchronous
+SQL autocommit
+SQL charset
+SQL connection timeout
+SQL engine case sensitivity
+SQL Listener
+SQL max data length
+SQL max rows
+SQL Method execution process
+SQL Net Session manager
+SQL On error abort
+SQL On error confirm
+SQL On error continue
+SQL param in
+SQL param in out
+SQL param out
+SQL param set size
+SQL query timeout
+SQL Server Port ID
+SQL use access rights
+SQL Worker pool server
+SQL_INTERNAL
+SSL cipher list
+ST 4D Expressions as sources
+ST 4D Expressions as values
+ST End highlight
+ST End text
+ST Expression type
+ST Expressions display mode
+ST Mixed type
+ST Picture type
+ST Plain type
+ST References
+ST References as spaces
+ST Start highlight
+ST Start text
+ST Tags as plain text
+ST Tags as XML code
+ST Text displayed with 4D Expression sources
+ST Text displayed with 4D Expression values
+ST Unknown tag type
+ST URL as labels
+ST URL as links
+ST Url type
+ST User links as labels
+ST User links as links
+ST User type
+ST Values
+Standard BTree index
+Start a new process
+Start menu Win_all
+Start menu Win_user
+Startup Win_all
+Startup Win_user
+Stop bits one
+Stop bits one and a half
+Stop bits two
+Strict mode
+String array
+String type with time zone
+String type without time zone
+Structure configuration
+Structure settings
+STX ASCII code
+SUB ASCII code
+Sunday
+Superimposition
+SYN ASCII code
+System
+System data source
+System date abbreviated
+System date long
+System date long pattern
+System date medium pattern
+System date short
+System date short pattern
+System fonts
+System heap resource bit
+System heap resource mask
+SYSTEM ID
+System time AM label
+System time long
+System time long abbreviated
+System time long pattern
+System time medium pattern
+System time PM label
+System time short
+System time short pattern
+System Win
+System32 Win
+Tab
+Tab key
+Table sequence number
+TCP Authentication
+TCP DNS
+TCP Finger
+TCP FTP Control
+TCP FTP Data
+TCP Gopher
+TCP HTTP WWW
+TCP IMAP3
+TCP Kerberos
+TCP KLogin
+TCP Nickname
+TCP NNTP
+TCP NTalk
+TCP NTP
+TCP PMCP
+TCP PMD
+TCP POP3
+TCP Printer
+TCP RADACCT
+TCP RADIUS
+TCP Remote cmd
+TCP Remote exec
+TCP Remote login
+TCP Router
+TCP SMTP
+TCP SNMP
+TCP SNMPTRAP
+TCP SUN RPC
+TCP Talk
+TCP Telnet
+TCP TFTP
+TCP UUCP
+TCP UUCP RLOGIN
+TCP_NODELAY
+Text array
+Text data
+Text document
+Texture appearance
+Thousand separator
+Thousands of colors
+Thursday
+TIFF Adobe deflate
+TIFF artist
+TIFF black is zero
+TIFF CCIRLEW
+TIFF CCITT1D
+TIFF CIELab
+TIFF CM
+TIFF CMYK
+TIFF color Filter Array
+TIFF compression
+TIFF copyright
+TIFF date time
+TIFF DCS
+TIFF deflate
+TIFF document name
+TIFF Epson ERF
+TIFF horizontal
+TIFF host computer
+TIFF ICCLab
+TIFF image description
+TIFF inches
+TIFF IT8BL
+TIFF IT8CTPAD
+TIFF IT8LW
+TIFF IT8MP
+TIFF ITULab
+TIFF JBIG
+TIFF JBIG Black and White
+TIFF JBIGColor
+TIFF JPEG
+TIFF JPEG2000
+TIFF JPEGThumbs Only
+TIFF Kodak DCR
+TIFF Kodak KDC
+TIFF Kodak262
+TIFF linear Raw
+TIFF LZW
+TIFF make
+TIFF MDIBinary level codec
+TIFF MDIProgressive transform codec
+TIFF MDIVector
+TIFF mirror horizontal
+TIFF mirror horizontal and rotate270cw
+TIFF mirror horizontal and Rotate90cw
+TIFF mirror vertical
+TIFF MM
+TIFF model
+TIFF next
+TIFF Nikon NEF
+TIFF none
+TIFF orientation
+TIFF pack bits
+TIFF Pentax PEF
+TIFF photometric interpretation
+TIFF Pixar film
+TIFF Pixar log
+TIFF Pixar log L
+TIFF Pixar log Luv
+TIFF resolution unit
+TIFF RGB
+TIFF RGBPalette
+TIFF rotate180
+TIFF rotate270CW
+TIFF rotate90CW
+TIFF SGILog
+TIFF SGILog24
+TIFF software
+TIFF Sony ARW
+TIFF T4Group3Fax
+TIFF T6Group4Fax
+TIFF Thunderscan
+TIFF transparency mask
+TIFF UM
+TIFF uncompressed
+TIFF white is zero
+TIFF xResolution
+TIFF YCb Cr
+TIFF yResolution
+Time array
+Time separator
+Times in milliseconds
+Times in seconds
+Times inside objects
+Timestamp log file name
+Tips delay
+Tips duration
+Tips enabled
+TLSv1_0
+TLSv1_1
+TLSv1_2
+Toolbar form window
+Translate
+Transparency
+Truncated centered
+Truncated non centered
+Tuesday
+Two fifty six colors
+Underline
+Unicode mode
+Up arrow key
+Update event
+Update records
+US ASCII code
+Use AST interpreter
+Use default folder
+Use legacy Network Layer
+Use PicRef
+Use selected file
+Use sheet window
+Use structure definition
+User data source
+User param value
+User preferences_all
+User preferences_user
+User settings
+User settings file
+User settings file for data
+User settings for data file
+User system localization
+UTF8 C string
+UTF8 text with length
+UTF8 text without length
+Verification log file
+Verify all
+Verify indexes
+Verify records
+Version
+Vertical concatenation
+Vertically centered
+vk 4D View Pro format
+vk clipboard paste options all
+vk clipboard paste options formatting
+vk clipboard paste options formulas
+vk clipboard paste options formulas and formatting
+vk clipboard paste options values
+vk clipboard paste options values and formatting
+vk current sheet
+vk font size large
+vk font size larger
+vk font size medium
+vk font size small
+vk font size smaller
+vk font size x large
+vk font size x small
+vk font size xx large
+vk font size xx small
+vk font style italic
+vk font style oblique
+vk font variant small caps
+vk font weight 100
+vk font weight 200
+vk font weight 300
+vk font weight 400
+vk font weight 500
+vk font weight 600
+vk font weight 700
+vk font weight 800
+vk font weight 900
+vk font weight bold
+vk font weight bolder
+vk font weight lighter
+vk header auto text blank
+vk header auto text letters
+vk header auto text numbers
+vk horizontal align center
+vk horizontal align general
+vk horizontal align left
+vk horizontal align right
+vk image layout center
+vk image layout none
+vk image layout stretch
+vk image layout zoom
+vk label alignment bottom center
+vk label alignment bottom left
+vk label alignment bottom right
+vk label alignment top center
+vk label alignment top left
+vk label alignment top right
+vk label visibility auto
+vk label visibility hidden
+vk label visibility visible
+vk line style dash dot
+vk line style dash dot dot
+vk line style dashed
+vk line style dotted
+vk line style double
+vk line style empty
+vk line style hair
+vk line style medium
+vk line style medium dash dot
+vk line style medium dash dot dot
+vk line style medium dashed
+vk line style slanted dash dot
+vk line style thick
+vk line style thin
+vk MS Excel format
+vk pattern full date time
+vk pattern long date
+vk pattern long time
+vk pattern month day
+vk pattern short date
+vk pattern short time
+vk pattern sortable date time
+vk pattern universal sortable date time
+vk pattern year month
+vk PDF format
+vk position bottom
+vk position center
+vk position center
+vk position left
+vk position nearest
+vk position right
+vk position top
+vk print centering both
+vk print centering horizontal
+vk print centering none
+vk print centering vertical
+vk print page order auto
+vk print page order down then over
+vk print page order over then down
+vk print page orientation landscape
+vk print page orientation portrait
+vk print visibility hide
+vk print visibility inherit
+vk print visibility show
+vk print visibility show once
+vk text decoration double underline
+vk text decoration line through
+vk text decoration none
+vk text decoration overline
+vk text decoration underline
+vk vertical align bottom
+vk vertical align center
+vk vertical align top
+vk workbook
+vss available
+vss error
+vss not available
+vss update required
+VT ASCII code
+WA enable contextual menu
+WA enable Java applets
+WA enable JavaScript
+WA enable plugins
+WA enable URL drop
+WA enable Web inspector
+WA next URLs
+WA previous URLs
+Waiting for input output
+Waiting for internal flag
+Waiting for user event
+Warning message
+wdl disable web log
+wdl enable with all body parts
+wdl enable with request body
+wdl enable with response body
+wdl enable without body
+Web character set
+Web Client IP address to listen
+Web database server
+Web debug log
+Web host database server
+Web HSTS enabled
+Web HSTS max age
+Web HTTP compression level
+Web HTTP compression threshold
+Web HTTP enabled
+Web HTTP TRACE
+Web HTTPS enabled
+Web HTTPS port ID
+Web inactive process timeout
+Web inactive session timeout
+Web IP address to listen
+Web keep session
+Web log recording
+Web max concurrent processes
+Web max sessions
+Web maximum requests size
+Web Port ID
+Web process on 4D remote
+Web process with no context
+Web request receiving server
+Web server process
+Web Service compression
+Web Service detailed message
+Web Service display auth dialog
+Web Service dynamic
+Web Service error code
+Web Service fault actor
+Web Service HTTP compression
+Web Service HTTP status code
+Web Service HTTP timeout
+Web Service manual
+Web Service manual in
+Web Service manual out
+Web Service reset auth settings
+Web Service SOAP header
+Web Service SOAP version
+Web Service SOAP_1_1
+Web Service SOAP_1_2
+Web Session cookie domain
+Web session cookie name
+Web Session cookie path
+Web Session IP address validation enabled
+Wednesday
+White
+Windows
+Windows MIDI document
+Windows sound document
+Windows video document
+wk 4D Write Pro layout
+wk 4wp
+wk anchor all
+wk anchor embedded
+wk anchor first page
+wk anchor horizontal align
+wk anchor horizontal offset
+wk anchor layout
+wk anchor left page
+wk anchor origin
+wk anchor page
+wk anchor right page
+wk anchor section
+wk anchor vertical align
+wk anchor vertical offset
+wk append
+wk armenian
+wk author
+wk auto
+wk avoid
+wk avoid widows and orphans
+wk background clip
+wk background color
+wk background height
+wk background image
+wk background image url
+wk background origin
+wk background position horizontal
+wk background position vertical
+wk background repeat
+wk background width
+wk bar
+wk baseline
+wk behind text
+wk body
+wk border box
+wk border color
+wk border color bottom
+wk border color left
+wk border color right
+wk border color top
+wk border radius
+wk border style
+wk border style bottom
+wk border style left
+wk border style right
+wk border style top
+wk border width
+wk border width bottom
+wk border width left
+wk border width right
+wk border width top
+wk bottom
+wk capitalize
+wk cell count
+wk cell range
+wk center
+wk circle
+wk cjk ideographic
+wk club
+wk column break
+wk column count
+wk column range
+wk column rule color
+wk column rule style
+wk column rule width
+wk column spacing
+wk column width
+wk company
+wk contain
+wk container
+wk content box
+wk cover
+wk current page footer
+wk current page header
+wk current section default footer
+wk current section default header
+wk current section first footer
+wk current section first header
+wk current section left footer
+wk current section left header
+wk current section right footer
+wk current section right header
+wk custom
+wk dashed
+wk date creation
+wk date modified
+wk debug format
+wk decimal
+wk decimal greek
+wk decimal leading zero
+wk default
+wk default paragraph stylesheet
+wk diamond
+wk direction
+wk disc
+wk do not recompute formulas
+wk docx
+wk dotted
+wk double
+wk dpi
+wk end
+wk end text
+wk exclude from range
+wk expressions as source
+wk expressions as space
+wk expressions as value
+wk false
+wk first column
+wk first page
+wk first row
+wk font
+wk font bold
+wk font default
+wk font family
+wk font italic
+wk font size
+wk footer box
+wk freeze expressions
+wk georgian
+wk groove
+wk header and footer autofit
+wk header box
+wk hebrew
+wk height
+wk hidden
+wk hiragana
+wk hollow square
+wk html wysiwyg
+wk id
+wk image
+wk image alternate text
+wk image expression
+wk image formula
+wk image url
+wk import html expressions as text
+wk in front of text
+wk include in range
+wk inherit style from paragraph
+wk inline with text
+wk inset
+wk inside
+wk justify
+wk katakana
+wk keep paragraph styles
+wk landscape
+wk layout unit
+wk leading
+wk left
+wk left page
+wk left to right
+wk line break
+wk line height
+wk link url
+wk list auto
+wk list font
+wk list font family
+wk list start number
+wk list string format LTR
+wk list string format RTL
+wk list style image
+wk list style image height
+wk list style image url
+wk list style type
+wk lower greek
+wk lower latin
+wk lower roman
+wk lowercase
+wk margin
+wk margin bottom
+wk margin left
+wk margin right
+wk margin top
+wk middle
+wk mime html
+wk min height
+wk min width
+wk mixed
+wk new line style sheet
+wk no repeat
+wk none
+wk normal
+wk notes
+wk offset
+wk outset
+wk outside
+wk owner
+wk padding
+wk padding bottom
+wk padding box
+wk padding left
+wk padding right
+wk padding top
+wk page break
+wk page break inside
+wk page first number
+wk page first right
+wk page height
+wk page margin
+wk page margin bottom
+wk page margin left
+wk page margin right
+wk page margin top
+wk page orientation
+wk page size
+wk page view mode
+wk page width
+wk paper box
+wk paragraph break
+wk parent
+wk portrait
+wk prepend
+wk protected
+wk protection enabled
+wk recompute formulas
+wk repeat
+wk repeat x
+wk repeat y
+wk replace
+wk resolution
+wk ridge
+wk right
+wk right page
+wk right to left
+wk row count
+wk row range
+wk section break
+wk section index
+wk section name
+wk semi transparent
+wk shift down
+wk shift left
+wk shift right
+wk shift up
+wk small uppercase
+wk solid
+wk spell enable
+wk square
+wk start
+wk start text
+wk style sheet
+wk subject
+wk subscript
+wk superscript
+wk tab default
+wk tab stop leadings
+wk tab stop offsets
+wk tab stop types
+wk table
+wk table align
+wk table ID
+wk tabs
+wk text align
+wk text color
+wk text indent
+wk text linethrough color
+wk text linethrough style
+wk text shadow color
+wk text shadow offset
+wk text transform
+wk text underline color
+wk text underline style
+wk title
+wk top
+wk transparent
+wk true
+wk type
+wk type body
+wk type character
+wk type container
+wk type default
+wk type image
+wk type image anchored
+wk type image inline
+wk type paragraph
+wk type table
+wk type table cell
+wk type table column
+wk type table row
+wk unit cm
+wk unit inch
+wk unit mm
+wk unit percent
+wk unit pt
+wk unit px
+wk upper latin
+wk upper roman
+wk uppercase
+wk value unit not percentage
+wk value unit percentage
+wk version
+wk vertical align
+wk visible background
+wk visible footers
+wk visible headers
+wk visible hidden characters
+wk visible horizontal ruler
+wk visible HTML WYSIWYG
+wk visible page frames
+wk visible references
+wk visible vertical ruler
+wk web page complete
+wk web page html 4D
+wk width
+wk word
+wk zoom
+Worker pool in use
+Worker pool spare
+Worker process
+Write mode
+XML base64
+XML binary encoding
+XML case insensitive
+XML case sensitive
+XML CDATA
+XML comment
+XML convert to PNG
+XML DATA
+XML data URI scheme
+XML date encoding
+XML datetime local
+XML datetime local absolute
+XML datetime UTC
+XML disabled
+XML DOCTYPE
+XML DOM case sensitivity
+XML duration
+XML ELEMENT
+XML enabled
+XML end document
+XML end element
+XML entity
+XML external entity resolution
+XML indentation
+XML ISO
+XML local
+XML native codec
+XML no indentation
+XML picture encoding
+XML processing instruction
+XML raw data
+XML seconds
+XML start document
+XML start element
+XML String encoding
+XML time encoding
+XML UTC
+XML with escaping
+XML with indentation
+XY Current form
+XY Current window
+XY Main window
+XY Screen
+Yellow
+ZIP Compression none
+ZIP Compression standard
+ZIP Encryption AES128
+ZIP Encryption AES192
+ZIP Encryption AES256
+ZIP Encryption none
+ZIP Ignore invisible files
+ZIP Without enclosing folder
