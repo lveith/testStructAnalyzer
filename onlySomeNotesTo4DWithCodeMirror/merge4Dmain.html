@@ -376,10 +376,10 @@ strong {
 <h2>
   <span style="margin-right: 20px; white-space: nowrap; font-size: 70%;">Mode: <select id="myModeChooser" onchange="myChangeMode(this.selectedOptions[0].value)"></select></span>
   <span style="margin-right: 20px; white-space: nowrap; font-size: 70%;">Theme: <select onchange="myChangeTheme(this.selectedOptions[0].value)" id="myThemeChooser">
-    <option value="default" selected>default</option>
+    <option value="default">default</option>
     <option value="3024-day">3024-day</option>
     <option value="3024-night">3024-night</option>
-    <option value="4d">4D</option>
+    <option value="4d" selected>4D</option>
     <option value="abcdef">abcdef</option>
     <option value="ambiance">ambiance</option>
     <option value="base16-dark">base16-dark</option>
@@ -768,7 +768,7 @@ function initUI() {
     gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
   });
   dv.editor().on('change', function(cm, change) { setTimeout(function(){ myMergeViewOnChanged(cm, change); }, 255); });
-  dv.rightOriginal().on('change', function(cm, change) { setTimeout(function(){ myMergeViewOnChanged(cm, change); }, 255); });  
+  dv.rightOriginal().on('change', function(cm, change) { setTimeout(function(){ myMergeViewOnChanged(cm, change); }, 255); });
 }
 
 function toggleDifferences() {
@@ -783,19 +783,24 @@ window.onload = function() {
   for (i = 0; i < myModes.length; i++) {
     newEl = document.createElement('option');
     newEl.setAttribute('value', myModes[i]);
-    if (myModes[i] === 'Plain Text') newEl.setAttribute('selected', 'selected');
+    if (myModes[i] === '4d') newEl.setAttribute('selected', 'selected');
     newEl.innerHTML = myModes[i];
     myEl.appendChild(newEl);
   }
-
-  value = "C_OBJECT($employees;$employee)\n\n$regExp1:=\"^[\\\\+\\\\-\\\\*\\\\/&|\\\\\\\\\\\\^<>=#%]\"  // $regExp1:=\"^[\\\\+\\\\-\\\\*\\\\/&|\\\\\\\\\\\\^<>=#%]\"\n$regExp2:=\"^((<=)|(>=)|(\\\\:=)|(\\\\^\\\\|)|(<<)|(>>)|(\\\\?\\\\+)|(\\\\?\\\\-)|(\\\\?\\\\?))\"  // $regExp2:=\"^((<=)|(>=)|(\\\\:=)|(\\\\^\\\\|)|(<<)|(>>)|(\\\\?\\\\+)|(\\\\?\\\\-)|(\\\\?\\\\?))\"\n\n$employees:=ds.Employee.query(\"lastName = :1\";\"S@\")\n$employee:=ds.Employee.new()\n$employee.lastName:=\"Smith\"\n$employee.save()\n$employees.add($employee) //The $employee entity is added to the $employees entity selection\n\n$Find:=Request(\"Type a name\")\nIf(OK=1)\n   QUERY([People];[People]LastName=$Find)\nElse\n   ALERT(\"You did not enter a name.\")\nEnd if\n\nFor($vlChar;1;Length(vtSomeText))\n   If(Character code(vtSomeText[[$vlChar]])=Tab)\n      vtSomeText[[$vlChar]]):=\"x\"\n   End if\nEnd for\n\n$fieldName1:=Field name(->[Kunden]Nummer)\n$tabName2:=Table name(->[Kunden])\nIf ($vlResAttr ?? Purgeable resource bit)  // Is the resource purgeable?\n	$test:=(<>Klammeraffe#3)\nEnd if \nIf (($vlResAttr & Purgeable resource mask)#0)  //Is the resource purgeable?\n	IDLE\n	$bool:=((Length([Kunden]E_Mail)>0) & (Position(\"@\";[Kunden]E_Mail;*)>0))\nEnd if \n$vlResAttr:=$vlResAttr ?+ Purgeable resource bit\n$vlResAttr:=$vlResAttr | Purgeable resource bit\n$vlLong:=($viIntA << 16) | $viIntB  // Store two Integers in a Long Integer\n$vlIntA:=$vlLong >> 16  // Extract back the integer stored in the high-word\n$viIntB:=$vlLong & 0xFFFF  // Extract back the Integer stored in the low-word\n$bool:=(True#False)\n$bool:=(True=False)\n$bool:=(1<2)\n$bool:=(2>1)\n$bool:=($nr1<=$nr2)\n$bool:=($nr1>=$nr2)\n$bool:=(\"abc test xyz\"%\"test\")\n$bool:=zIsStringSame(\"abc\";\"ABC\")\n$bool:=zIsPointerType(->[Kunden];4)\nBegin SQL\n	SELECT count(*)\n	from Aboauftraege\n	where Aboauftraege.Kombi_Name <> :$Leer\n	and Aboauftraege.Kombi_AboNummer = :$KombiNr\n	into :$AnzAbos\nEnd SQL\nFor each ($item;$col)\n	$test:=$test+$item\nEnd for each \nCase of \n	: (False)\n		IDLE\n	: (True)\n		IDLE\nEnd case \nWhile (Boolean_Expression)\n	statement(s)\nEnd while \nRepeat \n	statement(s)\nUntil (Boolean_Expression)\nFor ($vlElem;1;Size of array(anArray))\n	anArray{$vlElem}:=Null\nEnd for \nFor each (emp;ds.Employees.query(\"country='UK'\"))\n	emp.salary:=emp.salary*1.03\n	emp.save()\nEnd for each \nUse (Shared_obj_or_Shared_collection)\n	statement(s)\nEnd use\n$myDate:=!1997-01-20!+9\n";
+  value = "C_OBJECT($employees;$employee)\n\n$regExp1:=\"^[\\\\+\\\\-\\\\*\\\\/&|\\\\\\\\\\\\^<>=#%]\"  // $regExp1:=\"^[\\\\+\\\\-\\\\*\\\\/&|\\\\\\\\\\\\^<>=#%]\"\n$regExp2:=\"^((<=)|(>=)|(\\\\:=)|(\\\\^\\\\|)|(<<)|(>>)|(\\\\?\\\\+)|(\\\\?\\\\-)|(\\\\?\\\\?))\"  // $regExp2:=\"^((<=)|(>=)|(\\\\:=)|(\\\\^\\\\|)|(<<)|(>>)|(\\\\?\\\\+)|(\\\\?\\\\-)|(\\\\?\\\\?))\"\n\n$employees:=ds.Employee.query(\"lastName = :1\";\"S@\")\n$employee:=ds.Employee.new()\n$employee.lastName:=\"Smith\"\n$employee.save()\n$employees.add($employee) //The $employee entity is added to the $employees entity selection\n\n$Find:=Request(\"Type a name\")\nIf(OK=1)\n   QUERY([people];[people]LastName=$Find)\nElse\n   ALERT(\"You did not enter a name.\")\nEnd if\n\nFor($vlChar;1;Length(vtSomeText))\n   If(Character code(vtSomeText[[$vlChar]])=Tab)\n      vtSomeText[[$vlChar]]):=\"x\"\n   End if\nEnd for\n\n$fieldName1:=Field name(->[person]Nr)\n$tabName2:=Table name(->[person])\nIf ($vlResAttr ?? Purgeable resource bit)  // Is the resource purgeable?\n	$test:=(<>Klammeraffe#3)\nEnd if \nIf (($vlResAttr & Purgeable resource mask)#0)  //Is the resource purgeable?\n	IDLE\n	$bool:=((Length([person]email)>0) & (Position(\"@\";[person]email;*)>0))\nEnd if \n$vlResAttr:=$vlResAttr ?+ Purgeable resource bit\n$vlResAttr:=$vlResAttr | Purgeable resource bit\n$vlLong:=($viIntA << 16) | $viIntB  // Store two Integers in a Long Integer\n$vlIntA:=$vlLong >> 16  // Extract back the integer stored in the high-word\n$viIntB:=$vlLong & 0xFFFF  // Extract back the Integer stored in the low-word\n$bool:=(True#False)\n$bool:=(True=False)\n$bool:=(1<2)\n$bool:=(2>1)\n$bool:=($nr1<=$nr2)\n$bool:=($nr1>=$nr2)\n$bool:=(\"abc test xyz\"%\"test\")\n$bool:=zIsStringSame(\"abc\";\"ABC\")\n$bool:=zIsPointerType(->[person];4)\nBegin SQL\n	SELECT count(*)\n	from contract\n	where contract.CombiName <> :$Leer\n	and contract.CombiNr = :$CombiNr\n	into :$countContracts\nEnd SQL\nFor each ($item;$col)\n	$test:=$test+$item\nEnd for each \nCase of \n	: (False)\n		IDLE\n	: (True)\n		IDLE\nEnd case \nWhile (Boolean_Expression)\n	statement(s)\nEnd while \nRepeat \n	statement(s)\nUntil (Boolean_Expression)\nFor ($vlElem;1;Size of array(anArray))\n	anArray{$vlElem}:=Null\nEnd for \nFor each (emp;ds.Employees.query(\"country='UK'\"))\n	emp.salary:=emp.salary*1.03\n	emp.save()\nEnd for each \nUse (Shared_obj_or_Shared_collection)\n	statement(s)\nEnd use\n$myDate:=!1997-01-20!+9\n";
   orig1 = value;
   orig2 = value;
   initUI();
   let d = document.createElement('div');
   d.style.cssText = 'width: 50px; margin: 7px; height: 14px';
   dv.editor().addLineWidget(57, d);
+  set4dModeAndTheme();
 };
+
+function set4dModeAndTheme() {
+  myChangeMode('4d');
+  myChangeTheme('4d');
+}
 
 function mergeViewHeight(mergeView) {
   function editorHeight(editor) {
@@ -892,111 +897,107 @@ function myMergeViewOnChanged (myCm, myChange) {
     myLast = dv.right.diff[i][0];
   }
 }
-</script>
-<script>
-  function myChangeThemeSet(myThemeName) {
-    if (dv.editor()) {
-      dv.editor().setOption('theme', myThemeName);
-    }
-    if (dv.leftOriginal()) {
-      dv.leftOriginal().setOption('theme', myThemeName);
-    }
-    if (dv.rightOriginal()) {
-      dv.rightOriginal().setOption('theme', myThemeName);
-    }
-    setTimeout(function(){ initUI(); }, 255)
+
+function myChangeThemeSet(myThemeName) {
+  if (dv.editor()) {
+    dv.editor().setOption('theme', myThemeName);
   }
-  
-  function myChangeTheme(myThemeName) {
-    if (myThemeName === 'default') {
-      myChangeThemeSet(myThemeName);
-      return;
-    }
-    var link = document.createElement('link');
-    link.onload = function() { myChangeThemeSet(myThemeName); };
-    link.rel = 'stylesheet';
-    link.media = 'all';
-    link.href = '../theme/' + myThemeName.replace('solarized dark', 'solarized').replace('solarized light', 'solarized') + '.css';
-    document.getElementsByTagName('head')[0].appendChild(link);
+  if (dv.leftOriginal()) {
+    dv.leftOriginal().setOption('theme', myThemeName);
   }
-</script>
+  if (dv.rightOriginal()) {
+    dv.rightOriginal().setOption('theme', myThemeName);
+  }
+  setTimeout(function(){ initUI(); }, 255)
+}
 
-<script>
-      /* ----------------------------------
-       * replaceAnyTextFragments Version 0.1
-       * Funktion zum Ersetzen von Anzeige-Texten
-       * Einschraenkung: Die Funktion nutzt rekursiven Aufruf, somit darf die DOM-Struktur nicht tiefer verschachtelt sein als die JS-Engine verschachtelte Aufrufe haendeln kann!
-       */
-      function replaceTextFragments(myEl, myOldTxt, myNewTxt) {
-        var myOldTxtExp = RegExp(String(myOldTxt).replace(/([.*+?^=!:${}()|[\]\/\\])/g, '\\$1'), 'g');
-        if ((myEl.tagName !== "SCRIPT") && (myEl.tagName !== "STYLE") && (myEl.tagName !== "NOSCRIPT") && (myEl = myEl.firstChild)) do {
-          replaceTextFragments(myEl, myOldTxt, myNewTxt);
-          if ((myEl.nodeType === 3) && (myEl.nodeValue.match(myOldTxtExp))) {
-            myEl.nodeValue = myEl.nodeValue.replace(myOldTxtExp, myNewTxt);
-          }
-        } while ((myEl = myEl.nextSibling));
-      }
-      
-      function insertAnyStyles(myCSS, myID) {
-        var myHead, myStyleNode;
-        myHead = document.head || document.getElementsByTagName('head')[0];
-        myStyleNode = document.createElement('style');
-        myStyleNode.setAttribute("type", "text/css");
-        if ((typeof myID === 'string') && (myID.length > 1)) {
-          myStyleNode.setAttribute("id", myID);
-        }
-        if (myStyleNode.styleSheet) {
-          myStyleNode.styleSheet.cssText = myCSS;  /* for IE */
-        } else if (typeof myStyleNode.textContent === 'string') {
-          myStyleNode.textContent = myCSS;
-        } else {
-          myStyleNode.appendChild(document.createTextNode(myCSS));
-        }
-        myHead.appendChild(myStyleNode);
-      }
+function myChangeTheme(myThemeName) {
+  if (myThemeName === 'default') {
+    myChangeThemeSet(myThemeName);
+    return;
+  }
+  var link = document.createElement('link');
+  link.onload = function() { myChangeThemeSet(myThemeName); };
+  link.rel = 'stylesheet';
+  link.media = 'all';
+  link.href = '../theme/' + myThemeName.replace('solarized dark', 'solarized').replace('solarized light', 'solarized') + '.css';
+  document.getElementsByTagName('head')[0].appendChild(link);
+}
+/* ----------------------------------
+ * replaceAnyTextFragments Version 0.1
+ * Funktion zum Ersetzen von Anzeige-Texten
+ * Einschraenkung: Die Funktion nutzt rekursiven Aufruf, somit darf die DOM-Struktur nicht tiefer verschachtelt sein als die JS-Engine verschachtelte Aufrufe haendeln kann!
+ */
+function replaceTextFragments(myEl, myOldTxt, myNewTxt) {
+  var myOldTxtExp = RegExp(String(myOldTxt).replace(/([.*+?^=!:${}()|[\]\/\\])/g, '\\$1'), 'g');
+  if ((myEl.tagName !== "SCRIPT") && (myEl.tagName !== "STYLE") && (myEl.tagName !== "NOSCRIPT") && (myEl = myEl.firstChild)) do {
+    replaceTextFragments(myEl, myOldTxt, myNewTxt);
+    if ((myEl.nodeType === 3) && (myEl.nodeValue.match(myOldTxtExp))) {
+      myEl.nodeValue = myEl.nodeValue.replace(myOldTxtExp, myNewTxt);
+    }
+  } while ((myEl = myEl.nextSibling));
+}
 
-      function setBodyBGColor(myBGColor) {
-        if ((!(myBGColor)) || (typeof myBGColor !== 'string')) return false;
-        document.body.style.backgroundColor = myBGColor;
-      }
+function insertAnyStyles(myCSS, myID) {
+  var myHead, myStyleNode;
+  myHead = document.head || document.getElementsByTagName('head')[0];
+  myStyleNode = document.createElement('style');
+  myStyleNode.setAttribute("type", "text/css");
+  if ((typeof myID === 'string') && (myID.length > 1)) {
+    myStyleNode.setAttribute("id", myID);
+  }
+  if (myStyleNode.styleSheet) {
+    myStyleNode.styleSheet.cssText = myCSS;  /* for IE */
+  } else if (typeof myStyleNode.textContent === 'string') {
+    myStyleNode.textContent = myCSS;
+  } else {
+    myStyleNode.appendChild(document.createTextNode(myCSS));
+  }
+  myHead.appendChild(myStyleNode);
+}
 
-      function insertInEditor(myEditorName, mySrc) {
-        if ((!(myEditorName)) || (typeof myEditorName !== 'string')) return false;
-        myEditorName = myEditorName.toLowerCase();
-        if (myEditorName === 'mergeleft') {
-          dv.edit.setValue(mySrc);
-        } else if (myEditorName === 'mergeright') {
-          dv.rightOriginal().setValue(mySrc);
-        } else if (myEditorName === 'mergeleft3') {
-          if (dv.leftOriginal()) dv.leftOriginal().setValue(mySrc);
-        }
-      }
+function setBodyBGColor(myBGColor) {
+  if ((!(myBGColor)) || (typeof myBGColor !== 'string')) return false;
+  document.body.style.backgroundColor = myBGColor;
+}
 
-      function setEditorHeight(myEditorName, myHeight, myDiff) {
-        if ((!(myEditorName)) || (typeof myEditorName !== 'string')) return false;
-        myEditorName = myEditorName.toLowerCase();
-        if ((!(myHeight)) || (typeof myHeight !== 'string')) myHeight = 'calc';
-        if ((!(myDiff)) || (typeof myDiff !== 'string'))  {
-          myDiff = 15;
-        } else {
-          myDiff = parseInt(myDiff, 10);
-          if (isNaN(myDiff)) myDiff = 15;
-        }
-        if (myEditorName === 'merge') {
-          if (myHeight === 'calc') {
-            document.getElementById('box_editorsMerge').style.height = 'calc(100vh - ' + (document.getElementById('box_editorsMerge').offsetTop + myDiff) + 'px)';
-          } else {
-            document.getElementById('box_editorsMerge').style.height = myHeight;
-            if ((myHeight === 'auto') || (myHeight.indexOf('%') > 0)) {
-              dv.edit.refresh();
-              dv.rightOriginal().refresh();
-              document.getElementById('box_editorsMerge').style.height = (document.getElementById('box_editorsMerge').offsetHeight - myDiff) + 'px';
-            }
-          }
-          dv.edit.refresh();
-          dv.rightOriginal().refresh();
-        }
+function insertInEditor(myEditorName, mySrc) {
+  if ((!(myEditorName)) || (typeof myEditorName !== 'string')) return false;
+  myEditorName = myEditorName.toLowerCase();
+  if (myEditorName === 'mergeleft') {
+    dv.edit.setValue(mySrc);
+  } else if (myEditorName === 'mergeright') {
+    dv.rightOriginal().setValue(mySrc);
+  } else if (myEditorName === 'mergeleft3') {
+    if (dv.leftOriginal()) dv.leftOriginal().setValue(mySrc);
+  }
+}
+
+function setEditorHeight(myEditorName, myHeight, myDiff) {
+  if ((!(myEditorName)) || (typeof myEditorName !== 'string')) return false;
+  myEditorName = myEditorName.toLowerCase();
+  if ((!(myHeight)) || (typeof myHeight !== 'string')) myHeight = 'calc';
+  if ((!(myDiff)) || (typeof myDiff !== 'string'))  {
+    myDiff = 15;
+  } else {
+    myDiff = parseInt(myDiff, 10);
+    if (isNaN(myDiff)) myDiff = 15;
+  }
+  if (myEditorName === 'merge') {
+    if (myHeight === 'calc') {
+      document.getElementById('box_editorsMerge').style.height = 'calc(100vh - ' + (document.getElementById('box_editorsMerge').offsetTop + myDiff) + 'px)';
+    } else {
+      document.getElementById('box_editorsMerge').style.height = myHeight;
+      if ((myHeight === 'auto') || (myHeight.indexOf('%') > 0)) {
+        dv.edit.refresh();
+        dv.rightOriginal().refresh();
+        document.getElementById('box_editorsMerge').style.height = (document.getElementById('box_editorsMerge').offsetHeight - myDiff) + 'px';
       }
+    }
+    dv.edit.refresh();
+    dv.rightOriginal().refresh();
+  }
+}
 /* ========= /2/lib/util/formatting.js ========= */
 /* ======
 var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
