@@ -71,11 +71,6 @@ CodeMirror.defineMode("4d", function(conf, parserConf) {
       state.currentIndent--;
     }
     // tokenizers
-    var type, content;
-    function ret(tp, style, cont) {
-      type = tp; content = cont;
-      return style;
-    }
     function tokenBase(stream, state) {
         if (stream.eatSpace()) {
             return 'space';
@@ -86,12 +81,6 @@ CodeMirror.defineMode("4d", function(conf, parserConf) {
         if (stream.match(comment)){
             stream.skipToEnd();
             return 'comment';
-        }
-        if (stream.match('/')) {
-          if (stream.eat("*")) {
-            state.tokenize = tokenComment;
-            return tokenComment(stream, state);
-          }
         }
 
         // Handle Number Literals
@@ -276,18 +265,6 @@ CodeMirror.defineMode("4d", function(conf, parserConf) {
         };
     }
 
-  function tokenComment(stream, state) {
-    var maybeEnd = false, ch;
-    while (ch = stream.next()) {
-      if (ch == "/" && maybeEnd) {
-        state.tokenize = tokenBase;
-        break;
-      }
-      maybeEnd = (ch == "*");
-    }
-    return ret("comment", "comment");
-  }
-
     function tokenLexer(stream, state) {
         var style = state.tokenize(stream, state);
         var current = stream.current();
@@ -331,9 +308,6 @@ CodeMirror.defineMode("4d", function(conf, parserConf) {
               state.nextLineIndent = 0;
               state.doInCurrentLine = 0;
             }
-
-            if (state.tokenize != tokenComment && stream.eatSpace()) return null;
-
             var style = tokenLexer(stream, state);
 
             state.lastToken = {style:style, content: stream.current()};
@@ -348,10 +322,7 @@ CodeMirror.defineMode("4d", function(conf, parserConf) {
             if (trueText.match(closing) || trueText.match(doubleClosing) || trueText.match(middle)) return conf.indentUnit*(state.currentIndent-1);
             if(state.currentIndent < 0) return 0;
             return state.currentIndent * conf.indentUnit;
-        },
-
-        blockCommentStart: '/*',
-        blockCommentEnd: '*/'
+        }
 
     };
     return external;
